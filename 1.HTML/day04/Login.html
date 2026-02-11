@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script>
+        let employees = [
+            {id: 1001, name:"Harsha", emailId:"harsha@gmail.com", password:"123"},
+            {id: 1002, name:"Pasha",  emailId:"pasha@gmail.com",  password:"123"},
+            {id: 1003, name:"Venkat", emailId:"venkat@gmail.com", password:"123"}          
+        ];
+
+        let students = [
+            {id: 101, name:"Teja", emailId:"teja@gmail.com", password:"123"},
+            {id: 102, name:"Ravi", emailId:"ravi@gmail.com", password:"123"},
+            {id: 103, name:"Rani", emailId:"rani@gmail.com", password:"123"}
+        ];
+
+        let users = [
+            {id: 11, name:"Kiran", emailId:"kiran@gmail.com", password:"123"},
+            {id: 12, name:"Pavan", emailId:"pavan@gmail.com", password:"123"},
+            {id: 13, name:"Varun", emailId:"varun@gmail.com", password:"123"}
+        ];
+
+        let emailId = "";
+        let password = "";
+
+        function userAuthentication(customers) {    //Employees, Students, Users
+            for (let cust of customers) {
+                if (cust.emailId == emailId && cust.password == password) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function userLogin() {
+            emailId = document.getElementById("emailId").value;
+            password = document.getElementById("password").value;      
+
+            if (emailId == "HR" && password == "HR") {
+                window.open("ShowEmployees.html", "_self");
+
+            } else {  
+                if (userAuthentication(employees)) {
+                    window.open("ShowEmployees.html", "_self");
+
+                } else if (userAuthentication(students)) {             
+                    window.open("ShowStudents.html", "_self");
+
+                }  else if (userAuthentication(users)) {
+                    window.open("Products.html", "_self");
+
+                } else {
+                    alert("Invalid Credentials");
+                }
+            }
+        }
+    </script>
+
+</head>
+<body style="background-color: Cornsilk;">
+
+    <div style="margin-left: 75px; margin-top: 50px;">
+        
+        <h3 style="color: blue;">Login Form</h3>    
+    <form>
+        <table>
+            <tr>
+                <td> 
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i  class="glyphicon glyphicon-user"></i>
+                        </span>
+
+                        <input type="text" class="form-control" 
+                            id="emailId" placeholder="Email-Id" />
+
+                    </div> <br/>
+                </td>
+            </tr>
+            <tr>
+                
+                <td> 
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-lock"></i>
+                        </span>
+
+                        <input type="password" class="form-control" 
+                            id="password" placeholder="Password" />
+                    </div> 
+                    <br/>
+                </td>
+            </tr>
+            <tr>
+                <td> <button type="button" onclick="userLogin()" class="btn btn-primary">Login</button> New User? <a href="Register.html">SignUp</a> </td>
+            </tr>
+        </table>        
+    </form>  
+    </div>  
+</body>
+</html>

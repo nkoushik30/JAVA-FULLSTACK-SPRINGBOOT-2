@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    <script> 
+        function myfun() {
+            let result = "";
+            
+            let employees = [
+                {empId: 1001, empName:"Harsha", salary: 1212.12},
+                {empId: 1002, empName:"Pasha",  salary: 2323.23},
+                {empId: 1003, empName:"Indira", salary: 3434.34},
+                {empId: 1004, empName:"Venkat", salary: 4545.45},
+                {empId: 1005, empName:"Rakesh", salary: 5656.56}
+            ];
+            
+            result += "<center>";
+            result += "<table border=2>";
+            result += "<tr>";
+            result += "<th>EmpId</th>";
+            result += "<th>EmpName</th>";
+            result += "<th>Salary</th>";
+            result += "</tr>";
+            
+            for (let emp of employees) {
+                result += "<tr>";
+                result += "<td>" + emp.empId + "</td>";
+                result += "<td>" + emp.empName + "</td>";
+                result += "<td>" + emp.salary + "</td>";
+                result += "</tr>";
+            }            
+            result += "</table>";
+            result += "</center>";
+            document.getElementById("result").innerHTML = result;
+        }             
+    </script> 
+</head>
+<body>        
+    <button onclick="myfun()">Click Me</button> <br/>
+    <h1 id="result"></h1>
+</body>
+</html>

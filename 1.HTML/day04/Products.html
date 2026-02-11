@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Products</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script>
+
+        let productCount = 0;
+        let totalPrice = 0.0;
+
+        function purchase() {
+            if (productCount > 0) {
+                productCount = 0;
+                totalPrice = 0.0;
+                console.log("Thank You for Purchasing the Products");
+                console.log("");
+            } else {
+                console.log("No Products to Purchse");
+                console.log("");
+            }
+        }
+
+        function viewCart() {
+            if (productCount > 0) {
+                console.log("Cart Details");
+                console.log("Total Products: " + productCount);
+                console.log("Total Price   : " + totalPrice);
+                console.log("");
+            } else {
+                console.log("Cart is Empty");
+                console.log("");
+            }
+        }
+
+        function addtocart(prodId, prodName, price) {
+            console.log("Product Added to the Cart");
+            console.log("ProdId:" + prodId +
+                ", ProdName:" + prodName + ", Price: " + price);
+
+            productCount++;
+            totalPrice += price;
+            console.log("");
+        }
+
+
+    </script>
+</head>
+
+<body style="background-color: Cornsilk;">
+    <h1 style="color: blue; text-align: center; font-size: 50px;">Products</h1>
+    <p align="right">
+        <button class="btn btn-primary" type="button" onclick="viewCart()">View Cart</button> &nbsp;
+        <button class="btn btn-primary" type="button" onclick="purchase()">Purchase</button>
+    </p>
+    <br />
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="card" style="width:200px">
+                    <img class="card-img-top" src="images/1001.jpg" alt="1001 image"
+                        style="width: 150px; margin-left: 25px; margin-top: 5px;">
+                    <div class="card-body">
+                        <h4 class="card-title"> <b>Nokia</b> </h4>
+                        <p class="card-text"> No Cost EMI Applicable </p>
+                        <p class="card-text"> <b>Price: </b> <s>₹45000.00</s> ₹25999.00 </p>
+                        <p align="right">
+                            <button type="button" onclick="addtocart(1001, 'Nokia1', 25999.00)" class="btn btn-primary">
+                                AddtoCart </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" style="width:200px">
+                    <img class="card-img-top" src="images/1002.jpg" alt="1001 image"
+                        style="width: 150px; margin-left: 25px; margin-top: 5px;">
+                    <div class="card-body">
+                        <h4 class="card-title"> <b>Oppo</b> </h4>
+                        <p class="card-text"> No Cost EMI Applicable </p>
+                        <p class="card-text"> <b>Price: </b> <s>₹55000.00</s> ₹35999.00 </p>
+                        <p align="right">
+                            <button type="button" onclick="addtocart(1002, 'Oppo', 35999.00)" class="btn btn-primary">
+                                AddtoCart </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" style="width:200px">
+                    <img class="card-img-top" src="images/1003.jpg" alt="1001 image"
+                        style="width: 150px; margin-left: 25px; margin-top: 5px;">
+                    <div class="card-body">
+                        <h4 class="card-title"> <b>Nokia</b> </h4>
+                        <p class="card-text"> No Cost EMI Applicable </p>
+                        <p class="card-text"> <b>Price: </b> <s>₹15000.00</s> ₹11999.00 </p>
+                        <p align="right">
+                            <button type="button" onclick="addtocart(1003, 'Nokia2', 11999.00)" class="btn btn-primary">
+                                AddtoCart </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" style="width:200px">
+                    <img class="card-img-top" src="images/1004.jpg" alt="1001 image"
+                        style="width: 150px; margin-left: 25px; margin-top: 5px;">
+                    <div class="card-body">
+                        <h4 class="card-title"> <b>Samsung</b> </h4>
+                        <p class="card-text"> No Cost EMI Applicable </p>
+                        <p class="card-text"> <b>Price: </b> <s>₹75000.00</s> ₹61999.00 </p>
+                        <p align="right">
+                            <button type="button" onclick="addtocart(1004, 'Samsung1', 61999.00)"
+                                class="btn btn-primary"> AddtoCart </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" style="width:200px">
+                    <img class="card-img-top" src="images/1005.jpg" alt="1001 image"
+                        style="width: 150px; margin-left: 25px; margin-top: 5px;">
+                    <div class="card-body">
+                        <h4 class="card-title"> <b>Samsung</b> </h4>
+                        <p class="card-text"> No Cost EMI Applicable </p>
+                        <p class="card-text"> <b>Price: </b> <s>₹95000.00</s> ₹71999.00 </p>
+                        <p align="right">
+                            <button type="button" onclick="addtocart(1005, 'Samsung2', 71999.00)"
+                                class="btn btn-primary"> AddtoCart </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" style="width:200px">
+                    <img class="card-img-top" src="images/1006.jpg" alt="1001 image"
+                        style="width: 150px; margin-left: 25px; margin-top: 5px;">
+                    <div class="card-body">
+                        <h4 class="card-title"> <b>Apple</b> </h4>
+                        <p class="card-text"> No Cost EMI Applicable </p>
+                        <p class="card-text"> <b>Price: </b> <s>₹175000.00</s> ₹161999.00 </p>
+                        <p align="right">
+                            <button type="button" onclick="addtocart(1006, 'Apple', 161999.00)" class="btn btn-primary">
+                                AddtoCart </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,565 @@
+JavaScript Day-02
+*****************
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>
+
+    <script>        
+        let result = "";
+        for (let i = 1; i < 6; i++) {
+            result += "i = " + i + "<br/>";
+        }
+        document.getElementById("result").innerHTML = result;
+    </script>    
+</body>
+</html>
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>
+
+    <script>  
+        let num = 5;      
+        let result = "";
+
+        for (let i = 1; i < 11; i++) {
+            result += num + " * " + i + " = " + (num * i) + "<br/>";
+        }
+        document.getElementById("result").innerHTML = result;
+    </script>    
+</body>
+</html>
+
+
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>
+
+    <script>  
+        let arr = [10, 20, 30, 40, 50];      
+        let result = "";
+
+        for (let i = 0; i < arr.length; i++) {
+            result += "arr[" + i + "] = " + arr[i] + "<br/>";
+        }
+        
+        document.getElementById("result").innerHTML = result;
+    </script>    
+</body>
+</html>
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>
+
+    <script>  
+        let arr = [10, 20, 30, 40, 50];      
+        let result = "";
+
+        //Enhansed for loop or foreach loop
+        for (let i in arr) {
+            result += i + ", ";
+        }
+        
+        document.getElementById("result").innerHTML = result;
+    </script>    
+</body>
+</html>
+
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    <script>   
+        function myfun() {
+            alert("Function Executed...");
+        }       
+    </script> 
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>
+
+    <script>
+        myfun();
+    </script>
+</body>
+</html>
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    <script>   
+        function myfun() {
+            document.getElementById("result").innerHTML = 
+            "Function Executed...";
+        }       
+    </script> 
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>
+    <script>
+        myfun();
+    </script>
+</body>
+</html>
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    <script>   
+        function myfun() {
+            document.getElementById("result").innerHTML = 
+            "Function Executed...";
+        }       
+    </script> 
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>    
+    <button onclick="myfun()">Click Me</button>
+</body>
+</html>
+
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    <script>   
+        function myfun(num1, num2) {
+            document.getElementById("result").innerHTML = 
+            "Sum = " + (num1 + num2);
+        }       
+    </script> 
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>    
+    <button onclick="myfun(10, 20)">Click Me</button>
+</body>
+</html>
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    <script>   
+        function myfun() {
+            let uname = document.getElementById("username").value;
+
+            document.getElementById("result").innerHTML = 
+            "Welcome " + uname + "!";
+        }       
+    </script> 
+</head>
+<body>    
+    Enter Your Name: <input type="text" id="username" /> <br/>
+
+    <button onclick="myfun()">Click Me</button> <br/>
+    <h1 id="result"></h1>
+</body>
+</html>
+
+
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    <script>   
+        function myfun() {
+            let num = document.getElementById("num").value;
+            let count = 0;
+            let result = "";
+
+            for (let i = 2; i < num; i++) {
+                if (num % i == 0) {
+                    count++;
+                    break;
+                }
+            }
+
+            if (count == 0)
+                result = "Prime Number";
+            else
+                result = "Not a Prime Number";
+
+
+            document.getElementById("result").innerHTML = result;
+        }       
+    </script> 
+</head>
+<body>    
+    Enter a Number: <input type="number" id="num" /> <br/>
+    <button onclick="myfun()">Click Me</button> <br/>
+    <h1 id="result"></h1>
+</body>
+</html>
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    <script> 
+
+        function checkPrime(num) {
+            for (let i = 2; i < num; i++) {
+                if (num % i == 0)
+                    return "Not a Prime";
+            }
+            return "Prime Number";
+        }
+    
+        function myfun() {
+            let num = document.getElementById("num").value;
+
+            let result = checkPrime(num);
+            
+            document.getElementById("result").innerHTML = result;
+        }       
+    </script> 
+</head>
+<body>    
+    Enter a Number: <input type="number" id="num" /> <br/>
+    <button onclick="myfun()">Click Me</button> <br/>
+    <h1 id="result"></h1>
+</body>
+</html>
+
+
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    <script> 
+
+        function checkPrime(num) {
+            for (let i = 2; i < num; i++) {
+                if (num % i == 0)
+                    return "Not a Prime";
+            }
+            return "Prime Number";
+        }
+    
+        function myfun() {
+            let num = document.getElementById("num").value;            
+            document.getElementById("result").innerHTML = checkPrime(num);
+        }       
+    </script> 
+</head>
+<body>    
+    Enter a Number: <input type="number" id="num" /> <br/>
+    <button onclick="myfun()">Click Me</button> <br/>
+    <h1 id="result"></h1>
+</body>
+</html>
+
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    <script> 
+
+        function checkPrime(num) {
+            for (let i = 2; i < num; i++) {
+                if (num % i == 0)
+                    return "Not a Prime";
+            }
+            return "Prime Number";
+        }
+    
+        function myfun() {           
+            document.getElementById("result").innerHTML = 
+            checkPrime(document.getElementById("num").value);
+        }       
+    </script> 
+</head>
+<body>    
+    Enter a Number: <input type="number" id="num" /> <br/>
+    <button onclick="myfun()">Click Me</button> <br/>
+    <h1 id="result"></h1>
+</body>
+</html>
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    <script> 
+        function checkPrime(num) {
+            for (let i = 2; i < num; i++) {
+                if (num % i == 0)
+                    return false;
+            }
+            return true;
+        }    
+
+        function myfun() {
+            let start = parseInt(document.getElementById("start").value);
+            let end = parseInt(document.getElementById("end").value);
+            let result = "";
+            let i = 1;
+            end -= 1;
+            
+            for (i = start; i < end; i++) {
+                if (checkPrime(i) && checkPrime(i + 2)) {
+                    result += "(" + i + ", " + (i + 2) + ") <br/>";
+                }
+            }
+                      
+            document.getElementById("result").innerHTML = result;
+        }       
+    </script> 
+</head>
+<body>    
+    Enter a Start Value: <input type="text" id="start" /> <br/>
+    Enter a End Value:   <input type="text" id="end"   /> <br/>
+
+    <button onclick="myfun()">Click Me</button> <br/>
+    <h1 id="result"></h1>
+</body>
+</html>
+
+
+
+JSON - JavaScript Object Notation
+
+{ }, key & value as a pair
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    <script> 
+        function myfun() {
+            let result = "";
+            let student = {sid:"101", sname:"Harsha"};
+            
+            result += "Student ID: " + student.sid + "<br/>";
+            result += "Student Name: " + student.sname + "<br/>";
+            
+            document.getElementById("result").innerHTML = result;
+        }             
+    </script> 
+</head>
+<body>    
+    
+    <button onclick="myfun()">Click Me</button> <br/>
+    <h1 id="result"></h1>
+</body>
+</html>
+
+
+
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    <script> 
+        function myfun() {
+            let result = "";
+            
+            let employees = [
+                {empId: 1001, empName:"Harsha", salary: 1212.12},
+                {empId: 1002, empName:"Pasha",  salary: 2323.23},
+                {empId: 1003, empName:"Indira", salary: 3434.34},
+                {empId: 1004, empName:"Venkat", salary: 4545.45},
+                {empId: 1005, empName:"Rakesh", salary: 5656.56}
+            ];
+            
+            for (let emp of employees) {
+                result += "[" + 
+			emp.empId + ", " + 
+			emp.empName + ", " + 
+			emp.salary + 
+		"] <br/>"; 
+            }
+            document.getElementById("result").innerHTML = result;
+        }             
+    </script> 
+</head>
+<body>        
+    <button onclick="myfun()">Click Me</button> <br/>
+    <h1 id="result"></h1>
+</body>
+</html>
+
+
+
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    <script> 
+        function myfun() {
+            let result = "";
+            
+            let employees = [
+                {empId: 1001, empName:"Harsha", salary: 1212.12},
+                {empId: 1002, empName:"Pasha",  salary: 2323.23},
+                {empId: 1003, empName:"Indira", salary: 3434.34},
+                {empId: 1004, empName:"Venkat", salary: 4545.45},
+                {empId: 1005, empName:"Rakesh", salary: 5656.56}
+            ];
+            
+            for (let i = 0; i < employees.length; i++) {
+                result += "[" + 
+                employees[i].empId + ", " + 
+                employees[i].empName + ", " + 
+                employees[i].salary + 
+                "] <br/>"; 
+            }
+            document.getElementById("result").innerHTML = result;
+        }             
+    </script> 
+</head>
+<body>        
+    <button onclick="myfun()">Click Me</button> <br/>
+    <h1 id="result"></h1>
+</body>
+</html>
+
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    <script> 
+        function myfun() {
+            let result = "";
+            
+            let employees = [
+                {empId: 1001, empName:"Harsha", salary: 1212.12},
+                {empId: 1002, empName:"Pasha",  salary: 2323.23},
+                {empId: 1003, empName:"Indira", salary: 3434.34},
+                {empId: 1004, empName:"Venkat", salary: 4545.45},
+                {empId: 1005, empName:"Rakesh", salary: 5656.56}
+            ];
+            
+            result += "<center>";
+            result += "<table border=2>";
+            result += "<tr><th>EmpId</th><th>EmpName</th><th>Salary</th></tr>";
+            
+            for (let emp of employees) {
+                result += "<tr>";
+                result += "<td>" + emp.empId + "</td>";
+                result += "<td>" + emp.empName + "</td>";
+                result += "<td>" + emp.salary + "</td>";
+                result += "</tr>";
+            }
+            
+            result += "</table>";
+            result += "</center>";
+
+            document.getElementById("result").innerHTML = result;
+        }             
+    </script> 
+</head>
+<body>        
+    <button onclick="myfun()">Click Me</button> <br/>
+    <h1 id="result"></h1>
+</body>
+</html>
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    <script> 
+        function myfun() {
+            let result = "";
+            
+            let employees = [
+                {empId: 1001, empName:"Harsha", salary: 1212.12},
+                {empId: 1002, empName:"Pasha",  salary: 2323.23},
+                {empId: 1003, empName:"Indira", salary: 3434.34},
+                {empId: 1004, empName:"Venkat", salary: 4545.45},
+                {empId: 1005, empName:"Rakesh", salary: 5656.56}
+            ];
+            
+            result += "<center>";
+            result += "<table border=2>";
+            result += "<tr>";
+            result += "<th>EmpId</th>";
+            result += "<th>EmpName</th>";
+            result += "<th>Salary</th>";
+            result += "</tr>";
+            
+            for (let emp of employees) {
+                result += "<tr>";
+                result += "<td>" + emp.empId + "</td>";
+                result += "<td>" + emp.empName + "</td>";
+                result += "<td>" + emp.salary + "</td>";
+                result += "</tr>";
+            }
+            
+            result += "</table>";
+            result += "</center>";
+
+            document.getElementById("result").innerHTML = result;
+        }             
+    </script> 
+</head>
+<body>        
+    <button onclick="myfun()">Click Me</button> <br/>
+    <h1 id="result"></h1>
+</body>
+</html>
+

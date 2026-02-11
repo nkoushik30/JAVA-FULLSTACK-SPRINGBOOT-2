@@ -1,0 +1,1012 @@
+JS Day-03
+*********
+
+
+Login.html
+**********
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script>
+        function userLogin() {
+
+            let emailId = document.getElementById("emailId").value;
+            let password = document.getElementById("password").value;      
+
+            if (emailId == "HR" && password == "HR") {
+
+                window.open("ShowEmployees.html", "_self");
+
+            } else {
+                alert("Invalid Credentials");
+            }
+        }
+    </script>
+
+</head>
+<body style="background-color: Cornsilk;">
+
+    <div style="margin-left: 75px; margin-top: 50px;">
+        
+        <h3 style="color: blue;">Login Form</h3>    
+    <form>
+        <table>
+            <tr>
+                <td> 
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i  class="glyphicon glyphicon-user"></i>
+                        </span>
+
+                        <input type="text" class="form-control" 
+                            id="emailId" placeholder="Email-Id" />
+
+                    </div> <br/>
+                </td>
+            </tr>
+            <tr>
+                
+                <td> 
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-lock"></i>
+                        </span>
+
+                        <input type="password" class="form-control" 
+                            id="password" placeholder="Password" />
+                    </div> 
+                    <br/>
+                </td>
+            </tr>
+            <tr>
+                <td> <button type="button" onclick="userLogin()" class="btn btn-primary">Login</button> New User? <a href="Register.html">SignUp</a> </td>
+            </tr>
+        </table>        
+    </form>  
+    </div>  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script>
+
+        let employees = [
+            {id: 1001, name:"Harsha", emailId:"harsha@gmail.com", password:"123"},
+            {id: 1002, name:"Pasha",  emailId:"pasha@gmail.com",  password:"123"},
+            {id: 1003, name:"Venkat", emailId:"venkat@gmail.com", password:"123"}
+        ];
+
+
+
+        function userLogin() {
+
+            let emailId = document.getElementById("emailId").value;
+            let password = document.getElementById("password").value;      
+
+            if (emailId == "HR" && password == "HR") {
+                window.open("ShowEmployees.html", "_self");
+            } else {
+                
+                let authenticatedUser = false;
+
+                for (let emp of employees) {
+                    if (emp.emailId == emailId && emp.password == password) {
+                        authenticatedUser = true;
+                        break;
+                    }
+                }
+
+                if (authenticatedUser) {
+                    window.open("ShowEmployees.html", "_self");
+
+                } else {
+                    alert("Invalid Credentials");
+                }
+
+            }
+        }
+    </script>
+
+</head>
+<body style="background-color: Cornsilk;">
+
+    <div style="margin-left: 75px; margin-top: 50px;">
+        
+        <h3 style="color: blue;">Login Form</h3>    
+    <form>
+        <table>
+            <tr>
+                <td> 
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i  class="glyphicon glyphicon-user"></i>
+                        </span>
+
+                        <input type="text" class="form-control" 
+                            id="emailId" placeholder="Email-Id" />
+
+                    </div> <br/>
+                </td>
+            </tr>
+            <tr>
+                
+                <td> 
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-lock"></i>
+                        </span>
+
+                        <input type="password" class="form-control" 
+                            id="password" placeholder="Password" />
+                    </div> 
+                    <br/>
+                </td>
+            </tr>
+            <tr>
+                <td> <button type="button" onclick="userLogin()" class="btn btn-primary">Login</button> New User? <a href="Register.html">SignUp</a> </td>
+            </tr>
+        </table>        
+    </form>  
+    </div>  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script>
+        let employees = [
+            {id: 1001, name:"Harsha", emailId:"harsha@gmail.com", password:"123"},
+            {id: 1002, name:"Pasha",  emailId:"pasha@gmail.com",  password:"123"},
+            {id: 1003, name:"Venkat", emailId:"venkat@gmail.com", password:"123"}          
+        ];
+
+        let students = [
+            {id: 101, name:"Teja", emailId:"teja@gmail.com", password:"123"},
+            {id: 102, name:"Ravi", emailId:"ravi@gmail.com", password:"123"},
+            {id: 103, name:"Rani", emailId:"rani@gmail.com", password:"123"}
+        ];
+
+        let users = [
+            {id: 11, name:"Kiran", emailId:"kiran@gmail.com", password:"123"},
+            {id: 12, name:"Pavan", emailId:"pavan@gmail.com", password:"123"},
+            {id: 13, name:"Varun", emailId:"varun@gmail.com", password:"123"}
+        ];
+
+        let emailId = "";
+        let password = "";
+
+        function userAuthentication(customers) {    //Employees, Students, Users
+            for (let cust of customers) {
+                if (cust.emailId == emailId && cust.password == password) {
+                    return cust.id;
+                }
+            }
+            return 0;
+        }
+
+
+        function userLogin() {
+            emailId = document.getElementById("emailId").value;
+            password = document.getElementById("password").value;      
+
+            if (emailId == "HR" && password == "HR") {
+                window.open("ShowEmployees.html", "_self");
+
+            } else {                
+                
+                if (userAuthentication(employees) > 999) {
+                    window.open("ShowEmployees.html", "_self");
+
+                } else if (userAuthentication(students) > 99) {
+                    window.open("ShowStudents.html", "_self");
+
+                }  else if (userAuthentication(users) > 9) {
+                    window.open("Products.html", "_self");
+
+                } else {
+                    alert("Invalid Credentials");
+                }
+
+            }
+        }
+    </script>
+
+</head>
+<body style="background-color: Cornsilk;">
+
+    <div style="margin-left: 75px; margin-top: 50px;">
+        
+        <h3 style="color: blue;">Login Form</h3>    
+    <form>
+        <table>
+            <tr>
+                <td> 
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i  class="glyphicon glyphicon-user"></i>
+                        </span>
+
+                        <input type="text" class="form-control" 
+                            id="emailId" placeholder="Email-Id" />
+
+                    </div> <br/>
+                </td>
+            </tr>
+            <tr>
+                
+                <td> 
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-lock"></i>
+                        </span>
+
+                        <input type="password" class="form-control" 
+                            id="password" placeholder="Password" />
+                    </div> 
+                    <br/>
+                </td>
+            </tr>
+            <tr>
+                <td> <button type="button" onclick="userLogin()" class="btn btn-primary">Login</button> New User? <a href="Register.html">SignUp</a> </td>
+            </tr>
+        </table>        
+    </form>  
+    </div>  
+</body>
+</html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script>
+        let employees = [
+            {id: 1001, name:"Harsha", emailId:"harsha@gmail.com", password:"123"},
+            {id: 1002, name:"Pasha",  emailId:"pasha@gmail.com",  password:"123"},
+            {id: 1003, name:"Venkat", emailId:"venkat@gmail.com", password:"123"}          
+        ];
+
+        let students = [
+            {id: 101, name:"Teja", emailId:"teja@gmail.com", password:"123"},
+            {id: 102, name:"Ravi", emailId:"ravi@gmail.com", password:"123"},
+            {id: 103, name:"Rani", emailId:"rani@gmail.com", password:"123"}
+        ];
+
+        let users = [
+            {id: 11, name:"Kiran", emailId:"kiran@gmail.com", password:"123"},
+            {id: 12, name:"Pavan", emailId:"pavan@gmail.com", password:"123"},
+            {id: 13, name:"Varun", emailId:"varun@gmail.com", password:"123"}
+        ];
+
+        let emailId = "";
+        let password = "";
+
+        function userAuthentication(customers) {    //Employees, Students, Users
+            for (let cust of customers) {
+                if (cust.emailId == emailId && cust.password == password) {
+                    return cust.id;
+                }
+            }
+            return 0;
+        }
+
+
+        function userLogin() {
+            emailId = document.getElementById("emailId").value;
+            password = document.getElementById("password").value;      
+
+            if (emailId == "HR" && password == "HR") {
+                window.open("ShowEmployees.html", "_self");
+
+            } else {                
+                
+                if (userAuthentication(employees) > 999) {
+                    window.open("ShowEmployees.html", "_self");
+
+                } else if (userAuthentication(students) > 99) {
+                    window.open("ShowStudents.html", "_self");
+
+                }  else if (userAuthentication(users) > 9) {
+                    window.open("Products.html", "_self");
+
+                } else {
+                    alert("Invalid Credentials");
+                }
+
+            }
+        }
+    </script>
+
+</head>
+<body style="background-color: Cornsilk;">
+
+    <div style="margin-left: 75px; margin-top: 50px;">
+        
+        <h3 style="color: blue;">Login Form</h3>    
+    <form>
+        <table>
+            <tr>
+                <td> 
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i  class="glyphicon glyphicon-user"></i>
+                        </span>
+
+                        <input type="text" class="form-control" 
+                            id="emailId" placeholder="Email-Id" />
+
+                    </div> <br/>
+                </td>
+            </tr>
+            <tr>
+                
+                <td> 
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-lock"></i>
+                        </span>
+
+                        <input type="password" class="form-control" 
+                            id="password" placeholder="Password" />
+                    </div> 
+                    <br/>
+                </td>
+            </tr>
+            <tr>
+                <td> <button type="button" onclick="userLogin()" class="btn btn-primary">Login</button> New User? <a href="Register.html">SignUp</a> </td>
+            </tr>
+        </table>        
+    </form>  
+    </div>  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script>
+        let employees = [
+            {id: 1001, name:"Harsha", emailId:"harsha@gmail.com", password:"123"},
+            {id: 1002, name:"Pasha",  emailId:"pasha@gmail.com",  password:"123"},
+            {id: 1003, name:"Venkat", emailId:"venkat@gmail.com", password:"123"}          
+        ];
+
+        let students = [
+            {id: 101, name:"Teja", emailId:"teja@gmail.com", password:"123"},
+            {id: 102, name:"Ravi", emailId:"ravi@gmail.com", password:"123"},
+            {id: 103, name:"Rani", emailId:"rani@gmail.com", password:"123"}
+        ];
+
+        let users = [
+            {id: 11, name:"Kiran", emailId:"kiran@gmail.com", password:"123"},
+            {id: 12, name:"Pavan", emailId:"pavan@gmail.com", password:"123"},
+            {id: 13, name:"Varun", emailId:"varun@gmail.com", password:"123"}
+        ];
+
+        let emailId = "";
+        let password = "";
+
+        function userAuthentication(customers) {    //Employees, Students, Users
+            for (let cust of customers) {
+                if (cust.emailId == emailId && cust.password == password) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function userLogin() {
+            emailId = document.getElementById("emailId").value;
+            password = document.getElementById("password").value;      
+
+            if (emailId == "HR" && password == "HR") {
+                window.open("ShowEmployees.html", "_self");
+
+            } else {  
+                if (userAuthentication(employees)) {
+                    window.open("ShowEmployees.html", "_self");
+
+                } else if (userAuthentication(students)) {             
+                    window.open("ShowStudents.html", "_self");
+
+                }  else if (userAuthentication(users)) {
+                    window.open("Products.html", "_self");
+
+                } else {
+                    alert("Invalid Credentials");
+                }
+            }
+        }
+    </script>
+
+</head>
+<body style="background-color: Cornsilk;">
+
+    <div style="margin-left: 75px; margin-top: 50px;">
+        
+        <h3 style="color: blue;">Login Form</h3>    
+    <form>
+        <table>
+            <tr>
+                <td> 
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i  class="glyphicon glyphicon-user"></i>
+                        </span>
+
+                        <input type="text" class="form-control" 
+                            id="emailId" placeholder="Email-Id" />
+
+                    </div> <br/>
+                </td>
+            </tr>
+            <tr>
+                
+                <td> 
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-lock"></i>
+                        </span>
+
+                        <input type="password" class="form-control" 
+                            id="password" placeholder="Password" />
+                    </div> 
+                    <br/>
+                </td>
+            </tr>
+            <tr>
+                <td> <button type="button" onclick="userLogin()" class="btn btn-primary">Login</button> New User? <a href="Register.html">SignUp</a> </td>
+            </tr>
+        </table>        
+    </form>  
+    </div>  
+</body>
+</html>
+
+
+
+
+
+
+
+
+Logout
+******
+
+Menu.html
+*********
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MenuPage</title>
+</head>
+<body bgcolor="DarkSalmon">
+    <center>
+        <h2>
+            <a href="Home.html"          target="iframe4">Home</a> &nbsp;
+            <a href="Login.html"         target="iframe4">Login</a> &nbsp;
+            <a href="Register.html"      target="iframe4">Register</a> &nbsp;
+            <a href="ShowEmployees.html" target="iframe4">Show Employees</a>&nbsp;
+            <a href="ShowStudents.html"  target="iframe4">Show Students</a> &nbsp;
+            <a href="Products.html"      target="iframe4">Show Products</a> &nbsp;
+            <a href="Login.html"         target="iframe4">Logout</a> &nbsp;
+        </h2>
+    </center>
+</body>
+</html>
+
+
+
+
+
+Register.html
+*************
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script>
+        function userResgistration() {
+            let sid      = document.getElementById("studId").value;
+            let sname    = document.getElementById("studName").value;
+            let sdoj     = document.getElementById("doj").value;
+            let sgender  = document.getElementById("gender").value;
+            let scountry = document.getElementById("country").value;
+            let semailId = document.getElementById("emailId").value;
+            let spassword= document.getElementById("password").value;
+
+            console.log("Student ID      : " + sid);
+            console.log("Student Name    : " + sname);
+            console.log("Student DOJ     : " + sdoj);
+            console.log("Student Gender  : " + sgender);
+            console.log("Student Country : " + scountry);
+            console.log("Student Email-Id: " + semailId);
+            console.log("Student Password: " + spassword);
+        }
+    </script>
+
+</head>
+<body style="background-color: Cornsilk;">
+    <center> 
+    <form>
+        <table>
+            <tr>
+                <td colspan="2" align="center"><h3 style="color: blue;">User Registeration</h3></td>
+            </tr>
+            <tr>
+                <td> StudId </td>
+                <td> <input type="text" id="studId" /> </td>
+            </tr>
+            <tr>
+                <td> StudName </td>
+                <td> <input type="text" id="studName" /> </td>
+            </tr>
+            <tr>
+                <td> DOJ </td>
+                <td> <input type="date" id="doj" /> </td>
+            </tr>
+            <tr>
+                <td> Gender </td>
+                <td>
+                    <select id="gender">
+                        <option selected value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
+                    </select> 
+                </td>
+            </tr>
+            <tr>
+                <td> Country </td>
+                <td>
+                    <select id="country">
+                        <option selected value="">Select Country</option>
+                        <option value="INDIA">INDIA</option>
+                        <option value="USA">USA</option>
+                        <option value="Nepal">Nepal</option>
+                        <option value="SriLanka">Sri Lanka</option>
+                        <option value="Butan">Butan</option>
+                    </select> 
+                </td>
+            </tr>
+            <tr>
+                <td> Email-Id </td>
+                <td> <input type="text" id="emailId" /> </td>
+            </tr>
+            <tr>
+                <td> Password </td>
+                <td> <input type="password" id="password" /> </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td> <button type="button" onclick="userResgistration()" class="btn btn-primary">Register</button> Already User? <a href="Login.html">SignIn</a> </td>
+            </tr>
+        </table>        
+    </form>   
+    </center> 
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script>
+        function userResgistration() {
+
+            let sid      = document.getElementById("studId").value;
+            let sname    = document.getElementById("studName").value;
+            let sdoj     = document.getElementById("doj").value;
+            let sgender  = document.getElementById("gender").value;
+            let scountry = document.getElementById("country").value;
+            let semailId = document.getElementById("emailId").value;
+            let spassword= document.getElementById("password").value;
+
+
+            let student = {
+                studId: sid,
+                studName: sname,
+                doj: sdoj,
+                gender: sgender,
+                country: scountry,
+                emailId: semailId,
+                password: spassword
+            };
+
+            console.log(student);
+        }
+    </script>
+
+</head>
+<body style="background-color: Cornsilk;">
+    <center> 
+    <form>
+        <table>
+            <tr>
+                <td colspan="2" align="center"><h3 style="color: blue;">User Registeration</h3></td>
+            </tr>
+            <tr>
+                <td> StudId </td>
+                <td> <input type="text" id="studId" /> </td>
+            </tr>
+            <tr>
+                <td> StudName </td>
+                <td> <input type="text" id="studName" /> </td>
+            </tr>
+            <tr>
+                <td> DOJ </td>
+                <td> <input type="date" id="doj" /> </td>
+            </tr>
+            <tr>
+                <td> Gender </td>
+                <td>
+                    <select id="gender">
+                        <option selected value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
+                    </select> 
+                </td>
+            </tr>
+            <tr>
+                <td> Country </td>
+                <td>
+                    <select id="country">
+                        <option selected value="">Select Country</option>
+                        <option value="INDIA">INDIA</option>
+                        <option value="USA">USA</option>
+                        <option value="Nepal">Nepal</option>
+                        <option value="SriLanka">Sri Lanka</option>
+                        <option value="Butan">Butan</option>
+                    </select> 
+                </td>
+            </tr>
+            <tr>
+                <td> Email-Id </td>
+                <td> <input type="text" id="emailId" /> </td>
+            </tr>
+            <tr>
+                <td> Password </td>
+                <td> <input type="password" id="password" /> </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td> <button type="button" onclick="userResgistration()" class="btn btn-primary">Register</button> Already User? <a href="Login.html">SignIn</a> </td>
+            </tr>
+        </table>        
+    </form>   
+    </center> 
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script>
+        function userResgistration() {
+            
+            let student = {
+                studId  : document.getElementById("studId").value,
+                studName: document.getElementById("studName").value,
+                doj     : document.getElementById("doj").value,
+                gender  : document.getElementById("gender").value,
+                country : document.getElementById("country").value,
+                emailId : document.getElementById("emailId").value,
+                password: document.getElementById("password").value
+            };
+
+            console.log(student);
+        }
+    </script>
+
+</head>
+<body style="background-color: Cornsilk;">
+    <center> 
+    <form>
+        <table>
+            <tr>
+                <td colspan="2" align="center"><h3 style="color: blue;">User Registeration</h3></td>
+            </tr>
+            <tr>
+                <td> StudId </td>
+                <td> <input type="text" id="studId" /> </td>
+            </tr>
+            <tr>
+                <td> StudName </td>
+                <td> <input type="text" id="studName" /> </td>
+            </tr>
+            <tr>
+                <td> DOJ </td>
+                <td> <input type="date" id="doj" /> </td>
+            </tr>
+            <tr>
+                <td> Gender </td>
+                <td>
+                    <select id="gender">
+                        <option selected value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
+                    </select> 
+                </td>
+            </tr>
+            <tr>
+                <td> Country </td>
+                <td>
+                    <select id="country">
+                        <option selected value="">Select Country</option>
+                        <option value="INDIA">INDIA</option>
+                        <option value="USA">USA</option>
+                        <option value="Nepal">Nepal</option>
+                        <option value="SriLanka">Sri Lanka</option>
+                        <option value="Butan">Butan</option>
+                    </select> 
+                </td>
+            </tr>
+            <tr>
+                <td> Email-Id </td>
+                <td> <input type="text" id="emailId" /> </td>
+            </tr>
+            <tr>
+                <td> Password </td>
+                <td> <input type="password" id="password" /> </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td> <button type="button" onclick="userResgistration()" class="btn btn-primary">Register</button> Already User? <a href="Login.html">SignIn</a> </td>
+            </tr>
+        </table>        
+    </form>   
+    </center> 
+</body>
+</html>
+
+
+
+
+
+Products.html
+*************
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Products</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script>
+
+        let productCount = 0;
+        let totalPrice = 0.0;
+
+        function purchase() {
+            if (productCount > 0) {
+                productCount = 0;
+                totalPrice = 0.0;
+                console.log("Thank You for Purchasing the Products");
+                console.log("");
+            } else {
+                console.log("No Products to Purchse");
+                console.log("");
+            }
+        }
+
+        function viewCart() {
+            if (productCount > 0) {
+                console.log("Cart Details");
+                console.log("Total Products: " + productCount);
+                console.log("Total Price   : " + totalPrice);
+                console.log("");
+            } else {
+                console.log("Cart is Empty");
+                console.log("");
+            }
+        }
+
+        function addtocart(prodId, prodName, price) {
+            console.log("Product Added to the Cart");
+            console.log("ProdId:" + prodId +
+                ", ProdName:" + prodName + ", Price: " + price);
+
+            productCount++;
+            totalPrice += price;
+            console.log("");
+        }
+
+
+    </script>
+</head>
+
+<body style="background-color: Cornsilk;">
+    <h1 style="color: blue; text-align: center; font-size: 50px;">Products</h1>
+    <p align="right">
+        <button class="btn btn-primary" type="button" onclick="viewCart()">View Cart</button> &nbsp;
+        <button class="btn btn-primary" type="button" onclick="purchase()">Purchase</button>
+    </p>
+    <br />
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="card" style="width:200px">
+                    <img class="card-img-top" src="images/1001.jpg" alt="1001 image"
+                        style="width: 150px; margin-left: 25px; margin-top: 5px;">
+                    <div class="card-body">
+                        <h4 class="card-title"> <b>Nokia</b> </h4>
+                        <p class="card-text"> No Cost EMI Applicable </p>
+                        <p class="card-text"> <b>Price: </b> <s>₹45000.00</s> ₹25999.00 </p>
+                        <p align="right">
+                            <button type="button" onclick="addtocart(1001, 'Nokia1', 25999.00)" class="btn btn-primary">
+                                AddtoCart </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" style="width:200px">
+                    <img class="card-img-top" src="images/1002.jpg" alt="1001 image"
+                        style="width: 150px; margin-left: 25px; margin-top: 5px;">
+                    <div class="card-body">
+                        <h4 class="card-title"> <b>Oppo</b> </h4>
+                        <p class="card-text"> No Cost EMI Applicable </p>
+                        <p class="card-text"> <b>Price: </b> <s>₹55000.00</s> ₹35999.00 </p>
+                        <p align="right">
+                            <button type="button" onclick="addtocart(1002, 'Oppo', 35999.00)" class="btn btn-primary">
+                                AddtoCart </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" style="width:200px">
+                    <img class="card-img-top" src="images/1003.jpg" alt="1001 image"
+                        style="width: 150px; margin-left: 25px; margin-top: 5px;">
+                    <div class="card-body">
+                        <h4 class="card-title"> <b>Nokia</b> </h4>
+                        <p class="card-text"> No Cost EMI Applicable </p>
+                        <p class="card-text"> <b>Price: </b> <s>₹15000.00</s> ₹11999.00 </p>
+                        <p align="right">
+                            <button type="button" onclick="addtocart(1003, 'Nokia2', 11999.00)" class="btn btn-primary">
+                                AddtoCart </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" style="width:200px">
+                    <img class="card-img-top" src="images/1004.jpg" alt="1001 image"
+                        style="width: 150px; margin-left: 25px; margin-top: 5px;">
+                    <div class="card-body">
+                        <h4 class="card-title"> <b>Samsung</b> </h4>
+                        <p class="card-text"> No Cost EMI Applicable </p>
+                        <p class="card-text"> <b>Price: </b> <s>₹75000.00</s> ₹61999.00 </p>
+                        <p align="right">
+                            <button type="button" onclick="addtocart(1004, 'Samsung1', 61999.00)"
+                                class="btn btn-primary"> AddtoCart </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" style="width:200px">
+                    <img class="card-img-top" src="images/1005.jpg" alt="1001 image"
+                        style="width: 150px; margin-left: 25px; margin-top: 5px;">
+                    <div class="card-body">
+                        <h4 class="card-title"> <b>Samsung</b> </h4>
+                        <p class="card-text"> No Cost EMI Applicable </p>
+                        <p class="card-text"> <b>Price: </b> <s>₹95000.00</s> ₹71999.00 </p>
+                        <p align="right">
+                            <button type="button" onclick="addtocart(1005, 'Samsung2', 71999.00)"
+                                class="btn btn-primary"> AddtoCart </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" style="width:200px">
+                    <img class="card-img-top" src="images/1006.jpg" alt="1001 image"
+                        style="width: 150px; margin-left: 25px; margin-top: 5px;">
+                    <div class="card-body">
+                        <h4 class="card-title"> <b>Apple</b> </h4>
+                        <p class="card-text"> No Cost EMI Applicable </p>
+                        <p class="card-text"> <b>Price: </b> <s>₹175000.00</s> ₹161999.00 </p>
+                        <p align="right">
+                            <button type="button" onclick="addtocart(1006, 'Apple', 161999.00)" class="btn btn-primary">
+                                AddtoCart </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+

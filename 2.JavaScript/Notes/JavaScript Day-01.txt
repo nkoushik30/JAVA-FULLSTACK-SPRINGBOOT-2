@@ -1,0 +1,559 @@
+JavaScript Day-01
+*****************
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    <script>
+        console.log("Head: Script Executed");
+    </script>
+</head>
+<body>
+    <script>
+        console.log("Body: Script Executed");
+    </script>
+</body>
+</html>
+
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    <script>
+        const x = 10;
+        let y = 20;
+        var z = 30;
+        alert("Sum = " + (x + y + z));
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>
+
+    <script>
+        const x = 10;
+        let y = 20;
+        var z = 30;
+        document.getElementById("result").innerHTML = "Hello";
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>
+
+    <script>
+        const x = 10;
+        let y = 20;
+        var z = 30;
+
+        document.getElementById("result").innerHTML = "Sum = " + (x + y + z);
+
+    </script>    
+</body>
+</html>
+
+
+
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>
+
+    <script>
+        let num = 25;       //2 + 5 = 7
+        let result = 0;
+
+        result = num % 10;     //5
+        result += num / 10;    //2.5
+
+        result = parseInt(result);
+
+        document.getElementById("result").innerHTML = 
+        "Sum of individual digits: " + result;
+    </script>    
+</body>
+</html>
+
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>
+
+    <script>
+        let num = 25; 
+        let result = "num = " + num + "<br/><br/>";
+
+        num++;
+        result += "num++; <br/>";
+        result += "num = " + num + "<br/><br/>";
+
+        num--;
+        result += "num--; <br/>";
+        result += "num = " + num;
+
+        document.getElementById("result").innerHTML = result;
+    </script>    
+</body>
+</html>
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>
+
+    <script>
+        let num1 = 10;
+        let num2 = 0; 
+        let result = "num1 = " + num1 + ", num2 = " + num2 + "<br/><br/>";
+
+        result += "Performing Pre increment and decrement <br/>";
+
+        num2 = ++num1;
+        result += "num2 = ++num1; <br/>";
+        result += "num1 = " + num1 + ", num2 = " + num2 + "<br/><br/>";
+
+        num2 = --num1;
+        result += "num2 = --num1; <br/>";
+        result += "num1 = " + num1 + ", num2 = " + num2 + "<br/><br/>";
+
+        result += "Performing Post increment and decrement <br/>";
+
+        num2 = num1++;
+        result += "num2 = num1++; <br/>";
+        result += "num1 = " + num1 + ", num2 = " + num2 + "<br/><br/>";
+
+        num2 = num1--;
+        result += "num2 = num1--; <br/>";
+        result += "num1 = " + num1 + ", num2 = " + num2 + "<br/><br/>";
+        
+        document.getElementById("result").innerHTML = result;
+    </script>    
+</body>
+</html>
+
+
+
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>
+
+    <script>
+        let num1 = 10;
+        let num2 = 20; 
+        let temp = 0;
+
+        let result = "Before Swapping / Interchanging <br/>";
+        result += "num1 = " + num1 + ", num2 = " + num2 + "<br/><br/>";
+
+        temp = num1;
+        num1 = num2;
+        num2 = temp;
+        result += "After Swapping / Interchanging <br/>";
+        result += "num1 = " + num1 + ", num2 = " + num2 + "<br/><br/>";
+        
+        num1 = num1 + num2;
+        num2 = num1 - num2;
+        num1 = num1 - num2;
+        result += "After Swapping / Interchanging <br/>";
+        result += "num1 = " + num1 + ", num2 = " + num2 + "<br/><br/>";
+
+        document.getElementById("result").innerHTML = result;
+    </script>    
+</body>
+</html>
+
+
+
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>
+
+    <script>
+        let age = 12;
+        let result = "";
+
+        if (age > 17)
+            result = "Major, Eligible for Voting.";
+        else
+            result = "Minor, Not Eligible for Voting."
+
+        document.getElementById("result").innerHTML = result;
+    </script>    
+</body>
+</html>
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>
+
+    <script>
+        let num = 0;
+        let result = "";
+
+        if (num > 0)
+            result = "Positive Number";
+        else if (num < 0)
+            result = "Negative Number";
+        else
+            result = "Number is Zero(0)";
+        
+        document.getElementById("result").innerHTML = result;
+    </script>    
+</body>
+</html>
+
+
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>
+
+    <script>
+        let num1 = 101;
+        let num2 = 20;
+        let result = "";
+
+        if (num1 > num2)
+            result = "Num1 is Greater";
+        else 
+            result = "Num2 is Greater";
+        
+        document.getElementById("result").innerHTML = result;
+    </script>    
+</body>
+</html>
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>
+
+    <script>
+        let num1 = 100;
+        let num2 = 200;
+        let num3 = 300;
+        let result = "";
+
+        if (num1 > num2 && num1 > num3)
+            result = "Num1 is Greater";
+        else if (num2 > num3)
+            result = "Num2 is Greater";
+        else
+            result = "Num3 is Greater";
+
+        document.getElementById("result").innerHTML = result;
+    </script>    
+</body>
+</html>
+
+
+
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>
+
+    <script>
+        let num1 = 1000;
+        let num2 = 2000;
+        let num3 = 3000;
+        let max = num1;
+
+        if (max < num2)
+            max = num2;
+
+        if (max < num3)
+            max = num3;
+
+        document.getElementById("result").innerHTML = 
+        max + ", is greater";
+    </script>    
+</body>
+</html>
+
+
+
+Problem Statement:
+If number is divisible by 3, display "Fizz", if number is divisible by 5, display "Buzz", if number is divisible by 3 and 5, display "Fizz Buzz".
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>
+
+    <script>
+        let num = 30;    //9 (Fizz), 25 (Buzz), 30 (Fizz Buzz)
+        let result = "";
+        
+        if (num % 3 == 0)
+            result = "Fizz ";
+
+        if (num % 5 == 0)
+            result += "Buzz";
+
+        document.getElementById("result").innerHTML = result;
+    </script>    
+</body>
+</html>
+
+
+
+
+Leap Year
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>
+
+    <script>
+        let year = 1600;
+        let result = "";
+
+        if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0))
+            result = "Leap Year";
+
+        else
+            result = "Not a Leap Year"
+
+        document.getElementById("result").innerHTML = result;
+    </script>    
+</body>
+</html>
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>
+
+    <script>
+        let result = "";
+        let i = 1;
+
+        while (i < 6) {
+            result += i + ", ";
+            i++;
+        }
+
+        document.getElementById("result").innerHTML = result;
+    </script>    
+</body>
+</html>
+
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>
+
+    <script>
+        
+        let num1 = 0;
+        let num2 = 1;
+        let num3;
+        let count = 10;
+        let result = "";
+        let i = 2;
+
+        result += num1 + ", " + num2 + ", ";
+
+        while (i < count) {
+            
+            num3 = num1 + num2;
+            num1 = num2;
+            num2 = num3;
+
+            result += num3 + ", ";
+            i++;
+        }
+
+        document.getElementById("result").innerHTML = result;
+    </script>    
+</body>
+</html>
+
+
+
+
+
+Prime Number
+************
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>
+
+    <script>
+        let result = "";
+        let num = 9;
+        let count = 0;
+        let i = 1;
+
+        while (i <= num) {
+            if (num % i == 0)
+                count++;
+            i++;
+        }
+
+        if (count == 2)
+            result = "Prime Number";
+        else
+            result = "Not a Prime Number";
+
+        document.getElementById("result").innerHTML = result;
+    </script>    
+</body>
+</html>
+
+
+
+
+
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    
+</head>
+<body>
+    <h1 id="result">Show Result Here</h1>
+
+    <script>
+        let result = "";
+        let num = 7;
+        let count = 0;
+        let i = 2;
+
+        while (i < num) {
+            if (num % i == 0)
+                count++;
+            i++;
+        }
+
+        if (count == 0)
+            result = "Prime Number";
+        else
+            result = "Not a Prime Number";
+
+        document.getElementById("result").innerHTML = result;
+    </script>    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
