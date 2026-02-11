@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+    <script>
+        function getUserName() {
+            let firstName = document.getElementById("firstName").value;
+            let lastName = document.getElementById("lastName").value;
+            let result = document.getElementById("result");
+            
+            let fname = firstName.charAt(0);
+            fname = fname.toUpperCase();
+            fname = fname.concat(".");
+
+            let lname = lastName.charAt(0);
+            lname = lname.toUpperCase();
+            lname += lastName.substring(1, lastName.length);
+
+            result.innerHTML = "Welcome " + fname + lname + "!";
+        }
+    </script>
+</head>
+<body>
+    Enter FirstName: <input type="text" id="firstName" /><br/>
+    Enter lastName: <input type="text" id="lastName" /><br/>
+    <button onclick="getUserName()">GetUserName</button><br/><br/>              
+    <h1 id="result"></h1>
+</body>
+</html>
