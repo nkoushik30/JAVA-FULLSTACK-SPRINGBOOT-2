@@ -1,0 +1,301 @@
+JS Day-05
+*********
+
+1. Download and Install NodeJS from:
+https://nodejs.org/en/download
+
+2. Open VSCode and Create a file called Demo1.js
+
+Demo1.js
+********
+console.log("Testing NodeJS Program");
+
+3. View -> Terminal -> Change it from PowerShell to Command Prompt.
+4. Run the NodeJS Program as: node Demo1.js
+
+
+
+
+
+Demo on Const Keyword
+*********************
+const x = 10;
+console.log(x);
+
+//x = 20;           //Modification Not Allowed
+//console.log(x);
+
+//const x = 30;     //Re-Declaration is Not Allowed
+//console.log(x);
+
+
+
+
+Demo on Let Keyword
+*********************
+let x = 10;
+console.log(x);
+
+x = 20;           //Modification is Allowed
+console.log(x);
+
+//let x = 30;     //Re-Declaration is Not Allowed
+//console.log(x);
+
+
+
+
+Demo on Var Keyword
+*********************
+var x = 10;
+console.log(x);
+
+x = 20;             //Modification is Allowed
+console.log(x);
+
+var x = 30;         //Re-Declaration is Allowed
+console.log(x);
+
+
+
+
+Scope of Const, Let and Var Variables
+*************************************
+{
+    const x = 10;
+    let y = 20;
+    var z = 30;
+
+    console.log("const x = " + x);
+    console.log("let y = " + y);
+    console.log("var z = " + z);
+}
+
+//console.log("const x = " + x);    //Not Accessible
+//console.log("let y = " + y);      //Not Accessible
+console.log("var z = " + z);        //Accessible
+
+
+
+
+
+Scope of var variable
+*********************
+{
+    console.log("Outer Block Starts \n");
+    {
+        console.log("First Inner Block Starts \n");
+        {
+            console.log("Second Inner Block Starts");
+            let a = 10;
+            var b = 20;
+            console.log("let a = " + a + ", var b = " + b);
+            console.log("Second Inner Block Ends \n");
+        }                
+        console.log("var b = " + b);
+        console.log("First Inner Block Ends \n");
+    }
+    console.log("var b = " + b);
+    console.log("Outer Block Ends \n");
+}
+
+
+
+
+Passing function as a argument
+******************************
+function fun1() {
+    console.log("function fun1() called");
+}
+
+function fun2(number) {
+    number();
+    number();
+}
+
+fun2(fun1);
+
+
+
+
+
+Demo on map() function
+**********************
+
+//Normal Approach
+function findSquare(arr) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        newArr[i] = arr[i] * arr[i];
+    }
+    return newArr;
+}
+
+let arr = [1, 2, 3, 4, 5]
+let result = findSquare(arr);
+console.log(result);
+
+
+
+
+//Approach-2
+let arr = [1, 2, 3, 4, 5]
+let result = arr.map(function(num) {
+    return num * num;
+});
+console.log(result);
+
+
+
+
+//Approach-3
+let arr = [1, 2, 3, 4, 5]
+let result = arr.map((num) => num * num);
+console.log(result);
+
+
+
+
+
+
+
+Demo on filter() function
+*************************
+
+//Normal Approach
+function findEven(arr) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 == 0) {
+            newArr.push(arr[i]);
+        }
+    }
+    return newArr;
+}
+
+let arr = [1, 2, 3, 4, 5]
+let result = findEven(arr);
+console.log(result);
+
+
+
+
+
+
+//Approach-2
+let arr = [1, 2, 3, 4, 5]
+let result = arr.filter(function(num) {
+    if (num % 2 == 0) {
+        return num;
+    }
+});
+console.log(result);
+
+
+
+//Approach-3
+let arr = [1, 2, 3, 4, 5]
+let result = arr.filter(function(num) {
+    return num % 2 == 0;
+});
+console.log(result);
+
+
+//Approach-4
+let arr = [1, 2, 3, 4, 5]
+let result = arr.filter((num) => num % 2 == 0);
+console.log(result);
+
+
+
+
+
+
+Demo on reduce() function
+*************************
+
+//Normal Approach
+function findSum(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+let arr = [1, 2, 3, 4, 5]
+let result = findSum(arr);
+console.log("Total: " + result);
+
+
+
+
+//Approach-2
+let arr = [1, 2, 3, 4, 5]
+let result = arr.reduce(function(sum, num) {
+    return sum + num;
+}, 0);
+console.log("Total: " + result);
+
+
+
+//Approach-3
+let arr = [1, 2, 3, 4, 5]
+let result = arr.reduce((sum, num) => sum + num, 0);
+console.log("Total: " + result);
+
+
+
+
+
+
+
+Demo on forEach
+***************
+let arr = [1, 2, 3, 4, 5]
+
+arr.forEach(function(num) {
+    console.log(num);
+});
+console.log();
+
+arr.forEach((num)  => console.log(num));
+
+
+
+
+
+Demo on some()
+**************
+let arr = [1, 2, -3, 4, 5]
+let hasNegatives = arr.some(function (num) {
+    return num < 0;
+});
+console.log(hasNegatives);
+
+
+
+//Approach-2
+let arr = [1, 2, -3, 4, 5]
+let hasNegatives = arr.some((num) => num < 0);
+console.log(hasNegatives);
+
+
+
+
+
+
+
+
+
+
+Demo on every()
+***************
+
+
+let arr = [-1, -2, -3, -4, -5]
+let hasNegatives = arr.every((num) => num < 0);
+console.log(hasNegatives);
+
+
+

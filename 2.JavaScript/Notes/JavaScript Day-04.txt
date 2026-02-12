@@ -1,0 +1,116 @@
+JS Day-04
+*********
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Demo01</title>
+    <script>
+        function showUserName() {
+            let firstName = document.getElementById("firstName").value;
+            let lastName = document.getElementById("lastName").value;
+            let result = document.getElementById("result");
+            result.innerHTML = firstName + " " + lastName;            
+        }
+    </script>
+</head>
+<body>
+    Enter First Name: <input type="text" id="firstName" /> <br/>
+    Enter Last Name: <input type="text" id="lastName" /> <br/>
+    <button onclick="showUserName()">Show UserName</button> <br/><br/>
+    <h1 id="result"></h1>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Demo02</title>
+    <script>
+        function showUserName() {
+            let firstName = document.getElementById("firstName").value;
+            let lastName = document.getElementById("lastName").value;
+            let result = document.getElementById("result");
+
+            let str = "Length of FirstName: " + firstName.length + "<br/>";
+            str += "Length of LastName: " + lastName.length + "<br/>";
+            result.innerHTML = str;
+        }
+    </script>
+</head>
+<body>
+    Enter First Name: <input type="text" id="firstName" /> <br/>
+    Enter Last Name: <input type="text" id="lastName" /> <br/>
+    <button onclick="showUserName()">Show UserName</button> <br/><br/>
+    <h1 id="result"></h1>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Demo01</title>
+    <script>
+        function showUserName() {
+            let firstName = document.getElementById("firstName").value;            
+            let lastName = document.getElementById("lastName").value;
+            let result = document.getElementById("result");
+            
+            let fname = firstName.charAt(0);
+            fname = fname.toUpperCase();
+            fname = fname.concat(".");
+
+            let lname = lastName.charAt(0);
+            lname = lname.toUpperCase();
+            lname += lastName.substring(1, lastName.length);
+                        
+            result.innerHTML = "Welcome " + fname + lname + "!";
+        }
+    </script>
+</head>
+<body>
+    Enter First Name: <input type="text" id="firstName" /> <br/>
+    Enter Last Name: <input type="text" id="lastName" /> <br/>
+    <button onclick="showUserName()">Show UserName</button> <br/><br/>
+    <h1 id="result"></h1>
+</body>
+</html>
+
+
+
+
+
+
+String Functions in JavaScript
+
+fname: firstName: sree	-> s -> S
+firstName.charAt(0)	-> s
+toUpperCase()		-> S
+concat(.)		-> S.
+
+lanme: lastName : harsha -> h -> H
+lastName.charAt(0)	 -> h
+toUpperCase()		 -> H
+substring()		 -> arsha
+concat()		 -> Harsha
+
+prin -> fname+lname
