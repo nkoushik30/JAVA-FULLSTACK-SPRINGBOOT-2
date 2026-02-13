@@ -1,0 +1,701 @@
+CoreJava Day-01
+***************
+
+
+Create CoreJava Project
+***********************
+1. File -> New -> Project -> Java -> Java Project -> Basics (ProjectName).
+2. Change the Project Location (Put it under the GIT Folder).
+3. Click on Next -> Finish.
+
+
+Create a Package
+****************
+1. Right Click on src folder -> New -> Package (name: day1)
+
+
+Create a Class
+**************
+1. Right Click on day1 package -> New -> Class (name: Demo1)
+
+
+
+package day1;
+
+public class Demo1 {
+	public static void main(String[] args) {
+		System.out.println("Welcome to VIT");
+	}
+}
+
+
+
+
+Basics
+******
+Datatypes & Variables
+Operators
+Conditional Constructs
+Loops
+Arrays
+Functions
+
+
+
+DataTypes & Variables
+*********************
+package day1;
+
+public class Demo2 {
+	public static void main(String[] args) {
+		
+		byte a = 127;
+		short b = 32767;
+		int c = 2147483647;
+		long d = 2147483647890L;		
+		float e = 1.123456f;
+		double f = 1.1234567890;		
+		char g = '@';
+		String h = "Welcome All";		
+		boolean i = true;
+		
+		System.out.println("byte    a = " + a);
+		System.out.println("short   b = " + b);
+		System.out.println("int     c = " + c);
+		System.out.println("long    d = " + d);
+		System.out.println("float   e = " + e);
+		System.out.println("double  f = " + f);
+		System.out.println("char    g = " + g);
+		System.out.println("String  h = " + h);
+		System.out.println("boolean i = " + i);
+		System.out.println();
+		
+		System.out.println("a = " + a + "\nb = " + b + "\nc = " + c);
+		System.out.println("d = " + d + "\ne = " + e + "\nf = " + f);
+		System.out.println("g = " + g + "\nh = " + h + "\ni = " + i);
+	}
+}
+
+
+
+
+
+
+
+Arithmetic Operatrs
+*******************
+package day1;
+
+public class Demo3 {
+
+	public static void main(String[] args) {
+
+		int x = 10;
+		int y = 3;
+		
+		System.out.println("Sum = " + (x + y));
+		System.out.println("Sub = " + (x - y));
+		System.out.println("Mul = " + (x * y));
+		System.out.println("Quo = " + (x / y));
+		System.out.println("Rem = " + (x % y));
+
+	}
+
+}
+
+
+
+
+
+Arithmetic Assignment Operatrs
+******************************
+package day1;
+
+public class Demo4 {
+
+	public static void main(String[] args) {
+
+		int x = 10;
+		int y = 3;
+		System.out.println("x = " + x + ", y = " + y + "\n");
+
+		x += y;
+		System.out.println("x += y");
+		System.out.println("x = " + x + ", y = " + y + "\n");
+
+		x -= y;
+		System.out.println("x -= y");
+		System.out.println("x = " + x + ", y = " + y + "\n");
+
+		x *= y;
+		System.out.println("x *= y");
+		System.out.println("x = " + x + ", y = " + y + "\n");
+
+		x /= y;
+		System.out.println("x /= y");
+		System.out.println("x = " + x + ", y = " + y + "\n");
+
+		x %= y;
+		System.out.println("x %= y");
+		System.out.println("x = " + x + ", y = " + y + "\n");
+	}
+
+}
+
+
+
+
+
+
+
+
+Unary Operators
+***************
+package day1;
+
+public class Demo5 {
+
+	public static void main(String[] args) {
+
+		int x = 25;
+		System.out.println(x + "\n");
+		
+		x++;
+		System.out.println("x++");
+		System.out.println(x + "\n");
+		
+		x--;
+		System.out.println("x--");
+		System.out.println(x + "\n");
+
+	}
+}
+
+
+
+
+package day1;
+
+public class Demo6 {
+
+	public static void main(String[] args) {
+
+		int x = 25;
+		int y = 0;
+		System.out.println("x = " + x + ", y = " + y + "\n");
+		
+		System.out.println("Performing Pre Increment & Decrement");
+		y = ++x;
+		System.out.println("x = " + x + ", y = " + y + "\n");
+
+		y = --x;
+		System.out.println("x = " + x + ", y = " + y + "\n");
+		
+		System.out.println("Performing Post Increment & Decrement");
+		y = x++;
+		System.out.println("x = " + x + ", y = " + y + "\n");
+
+		y = x--;
+		System.out.println("x = " + x + ", y = " + y + "\n");
+
+	}
+
+}
+
+
+
+
+
+
+
+Conditional Constructs
+**********************
+
+Simple if else
+**************
+package day1;
+
+public class Demo7 {
+	public static void main(String[] args) {
+		
+		int age = 22;
+		
+		if (age > 17)
+			System.out.println("Major");
+		
+		else
+			System.out.println("Minor");
+
+	}
+}
+
+
+
+
+
+package day1;
+
+public class Demo8 {
+	public static void main(String[] args) {
+		
+		int age = 15;
+		
+		if (age > 12 && age < 20)
+			System.out.println("Teenager");
+		
+		else
+			System.out.println("Not a Teenager");
+
+	}
+}
+
+
+
+
+
+
+Multiple if else
+****************
+package day1;
+
+public class Demo9 {
+	public static void main(String[] args) {
+		int x = 10;
+		int y = 20;
+		int z = 30;
+		
+		if (x > y && x > z) 
+			System.out.println(x + " is greater");
+		
+		else if (y > z)
+			System.out.println(y + " is greater");
+		
+		else
+			System.out.println(z + " is greater");
+
+	}
+}
+
+
+
+
+
+package day1;
+
+public class Demo10 {
+	public static void main(String[] args) {
+		int x = 10;
+		int y = 20;
+		int z = 30;
+		
+		int max = x;
+		
+		if (max < y)
+			max = y;
+		
+		if (max < z)
+			max = z;
+		
+		System.out.println(max + " is greater");
+
+	}
+}
+
+
+
+
+
+Nested if else
+**************
+package day1;
+
+public class Demo11 {
+	public static void main(String[] args) {
+		int age = 15;
+		
+		if (age > 12) {
+			
+			if (age < 20) {
+				System.out.println("You are a Teenager");
+			} else {
+				System.out.println("You are an Adult");
+			}
+			
+		} else {
+			System.out.println("You are a Kid");
+		}
+	}
+}
+
+
+
+
+
+
+Switch Case
+***********
+package day1;
+
+import java.util.Scanner;
+
+public class Demo12 {
+	public static void main(String[] args) {
+		
+		int a = 10;
+		int b = 3;
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Select Your Choice");
+		System.out.println("******************");
+		
+		System.out.println("1. Addition");
+		System.out.println("2. Subtraction");
+		System.out.println("3. Multiplication");
+		System.out.println("4. Division");
+		System.out.println("5. All Operations");
+		System.out.println("6. Exit \n");
+		
+		System.out.print("Enter Your Choice: ");
+		int choice = scan.nextInt();
+		System.out.println();
+		
+		switch(choice) {
+		
+		case 1: System.out.println("Sum = " + (a + b));
+		break;
+		
+		case 2: System.out.println("Sub = " + (a - b));
+		break;
+		
+		case 3: System.out.println("Mul = " + (a * b));
+		break;
+		
+		case 4: System.out.println("Quo = " + (a / b));
+				System.out.println("Rem = " + (a % b));
+		break;
+		
+		case 5:	System.out.println("Sum = " + (a + b));
+				System.out.println("Sub = " + (a - b));
+				System.out.println("Mul = " + (a * b));
+				System.out.println("Quo = " + (a / b));
+				System.out.println("Rem = " + (a % b));
+		break;
+		
+		case 6: System.out.println("Application Teminated");
+		 		System.exit(0);
+		break;
+		
+		default:System.out.println("Invalid Choice");
+		break;
+		}
+	}
+}
+
+
+
+
+While, Do-While and For Loop
+****************************
+package day1;
+
+public class Demo13 {
+	public static void main(String[] args) {
+		System.out.println("While Loop");
+		int i = 1;
+		while (i < 6) {
+			System.out.print(i + " ");
+			i++;
+		}
+		System.out.println("\n");
+		
+		System.out.println("Do-While Loop");
+		i = 1;
+		do {
+			System.out.print(i + " ");
+			i++;
+		} while (i > 22);
+		System.out.println("\n");
+		
+		System.out.println("For Loop");
+		for (i = 1; i < 6; i++) {
+			System.out.print(i + " ");
+		}
+		System.out.println("\n");
+	}
+}
+
+
+
+Demonstration on Scanner
+************************
+package day1;
+import java.util.Scanner;
+
+public class Demo14 {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Enter a Number: ");
+		int num = scan.nextInt();
+		
+		System.out.println("num = " + num);
+	}
+}
+
+
+
+
+package day1;
+import java.util.Scanner;
+
+public class Demo14 {
+	public static void main(String[] args) {
+		
+		System.out.print("Enter a Number: ");
+		int num = new Scanner(System.in).nextInt();
+		
+		System.out.println("num = " + num);
+	}
+}
+
+
+
+
+package day1;
+
+public class Demo14 {
+	public static void main(String[] args) {
+		
+		System.out.print("Enter a Number: ");
+		int num = new java.util.Scanner(System.in).nextInt();
+		
+		System.out.println("num = " + num);
+	}
+}
+
+
+
+
+
+package day1;
+
+public class Demo14 {
+	public static void main(String[] args) {
+		
+		System.out.print("Enter a Number1: ");
+		int num1 = new java.util.Scanner(System.in).nextInt();
+		
+		System.out.print("Enter a Number2: ");
+		int num2 = new java.util.Scanner(System.in).nextInt();
+		
+		System.out.println("num1 = " + num1);
+		System.out.println("num2 = " + num2);
+	}
+}
+
+
+The above program is not recommended for accepting multiple values using the scanner object.
+Use the below program.
+
+package day1;
+
+import java.util.Scanner;
+
+public class Demo14 {
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Enter a Number1: ");
+		int num1 = scan.nextInt();
+		
+		System.out.print("Enter a Number2: ");
+		int num2 = scan.nextInt();
+		
+		System.out.println("num1 = " + num1);
+		System.out.println("num2 = " + num2);
+	}
+}
+
+
+
+
+
+
+Arrays
+******
+
+package day1;
+
+public class Demo15 {
+	public static void main(String[] args) {
+
+		int[] arr = new int[5];
+
+		arr[0] = 10;
+		arr[1] = 20;
+		arr[2] = 30;
+		arr[3] = 40;
+		arr[4] = 50;
+		
+		System.out.println("arr[0] = " + arr[0]);
+		System.out.println("arr[1] = " + arr[1]);
+		System.out.println("arr[2] = " + arr[2]);
+		System.out.println("arr[3] = " + arr[3]);
+		System.out.println("arr[4] = " + arr[4]);		
+	}
+}
+
+
+
+
+
+package day1;
+
+public class Demo16 {
+	public static void main(String[] args) {
+
+		int[] arr = new int[] {10, 20, 30, 40, 50};
+		
+		System.out.println("arr[0] = " + arr[0]);
+		System.out.println("arr[1] = " + arr[1]);
+		System.out.println("arr[2] = " + arr[2]);
+		System.out.println("arr[3] = " + arr[3]);
+		System.out.println("arr[4] = " + arr[4]);		
+	}
+}
+
+
+
+
+
+package day1;
+
+public class Demo16 {
+	public static void main(String[] args) {
+
+		int[] arr = {10, 20, 30, 40, 50};
+		
+		System.out.println("arr[0] = " + arr[0]);
+		System.out.println("arr[1] = " + arr[1]);
+		System.out.println("arr[2] = " + arr[2]);
+		System.out.println("arr[3] = " + arr[3]);
+		System.out.println("arr[4] = " + arr[4]);		
+	}
+}
+
+
+
+
+Using forech loop
+*****************
+
+package day1;
+
+public class Demo17 {
+	public static void main(String[] args) {
+
+		int[] arr = {10, 20, 30, 40, 50};
+		
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+		System.out.println("\n");
+		
+		//Enhansed for loop or foreach loop		
+		for (int i : arr) {
+			System.out.print(i + " ");
+		}
+	}
+}
+
+
+
+package day1;
+
+import java.util.Scanner;
+
+public class Demo18 {
+	public static void main(String[] args) {
+
+		int[] arr = new int[5];
+		Scanner scan = new Scanner(System.in);
+			
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print("arr[" + i + "]: ");
+			arr[i] = scan.nextInt();
+		}
+		System.out.println();
+		
+		for (int i = 0; i < arr.length; i++) {
+			System.out.println("arr[" + i + "]: " + arr[i]);
+		}
+		System.out.println();
+	}
+}
+
+
+
+
+package day1;
+
+public class Demo19 {
+	public static void main(String[] args) {
+		
+		int sum = 0;
+		int prod = 1;
+		int min;
+		int max;
+		int[] arr = new int[] {5, 7, 2, 9, 3};
+		
+		min = arr[0];
+		max = arr[0];
+		for (int i : arr) {
+			System.out.print(i + " ");
+			
+			sum += i;
+			prod *= i;
+			
+			if (min > i)
+				min = i;
+			
+			if (max < i)
+				max = i;
+		}
+		System.out.println("\n");
+	
+		System.out.println("Min  = " + min);
+		System.out.println("Max  = " + max);
+		System.out.println("Sum  = " + sum);
+		System.out.println("Prod = " + prod);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
