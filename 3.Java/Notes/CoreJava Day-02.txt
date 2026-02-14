@@ -1,0 +1,291 @@
+CoreJava Day-02
+***************
+
+class in OOPS    = Structure in CPP + Security
+Structure in CPP = Structure in C + Functions
+Structure in C   = Union in C + Independent Memories
+Union in C       = Enum + Combination of Primitive Data Types
+Enum in C        = Arrays + Custom Index Values
+Array            = Data Type with Continuous Memories
+Data Type        = Variable Creation + Hold the Data
+Variable         = Copy of the Data Type.
+
+
+
+Features of OOPS (Object Oriented Programming System)
+****************
+1. Class
+2. Object
+3. Encapsulation
+4. Abstraction
+5. Inheritance
+6. Polymorphism
+   1. Static or Compile Time or Early Binding
+   2. Dynamic or Run Time or Late Binding
+
+
+
+
+Class & Object
+**************
+
+package day1;
+
+public class Demo1 {
+	
+	public static void myMethod() {
+		System.out.println("MyMethod Called...");
+	}
+
+	public static void main(String[] args) {
+		myMethod();		
+		myMethod();
+	}
+}
+
+
+
+
+
+package day1;
+
+public class Demo2 {
+	
+	public void sayHi() {
+		System.out.println("Hi EveryOne!!!");
+	}
+
+	public static void main(String[] args) {
+		
+		new Demo2().sayHi();
+		
+		new Demo2().sayHi();
+		
+		//new Demo2() is an object of Demo2 Class
+	}
+}
+
+
+
+
+
+
+
+package day1;
+
+public class Demo3 {
+	
+	public void sayHi() {
+		System.out.println("Hi EveryOne!!!");
+	}
+
+	public static void main(String[] args) {
+		Demo2 obj = new Demo2();
+		obj.sayHi();
+		obj.sayHi();		
+	}
+}
+
+
+
+
+
+
+package day1;
+
+public class Demo4 {
+	
+	public void sayHi() {
+		System.out.println("Hi EveryOne!!!");
+	}
+
+	public static void main(String[] args) {
+		
+		Demo2 obj;			//obj - variable
+		obj = new Demo2();	//obj - reference variable
+		
+		obj.sayHi();
+		obj.sayHi();		
+	}
+}
+
+
+
+
+
+
+package day1;
+
+class Example5 {
+	public void sayHi() {
+		System.out.println("Hi EveryOne!!!");
+	}
+}
+
+public class Demo5 {
+	public static void main(String[] args) {
+		Example5 obj = new Example5();
+		obj.sayHi();
+	}
+}
+
+
+
+***************************************
+
+
+Create a new class called Example6, without main() method
+Example6.java
+*************
+package day1;
+
+public class Example6 {
+	public void sayHi() {
+		System.out.println("Hi EveryOne!!!");
+	}
+}
+
+
+Create a new class called Demo6, with main() method
+Demo6.java
+**********
+package day1;
+
+public class Demo6 {
+	public static void main(String[] args) {
+		Example6 obj = new Example6();
+		obj.sayHi();
+	}
+}
+
+
+***************************************
+
+
+package day1;
+
+//Getter & Setter
+class Example7 {
+	
+	private int data;
+	
+	//Setter - setting the value or initializing the value
+	public void setData(int data) {
+		this.data = data;
+	}
+	
+	//Getter - getting the value or reteriving the value
+	public int getData() {
+		return data;
+	}
+}
+
+public class Demo7 {
+	public static void main(String[] args) {
+
+		Example7 obj = new Example7();
+		
+		obj.setData(25);
+		
+		int result = obj.getData();
+		System.out.println("Data = " + result);
+		//OR
+		System.out.println("Data = " + obj.getData());
+	}
+}
+
+
+
+
+
+
+***************************************
+
+
+
+Constructor
+***********
+1. Constructor is a Method
+2. Constructor is having the same name as the class name
+3. Constructor does not have any return type
+
+
+Advantage
+*********
+Constructor will invoke/execute automatically, once the object is create.
+
+
+Usage
+*****
+Constructors are used to initialize the default values to the class variable.
+
+
+
+package day1;
+
+class Example {
+	
+	private int x;
+	private int y;
+
+	//Default Constructor
+	public Example() {
+		x = 10;
+		y = 11;
+	}
+	
+	//Parameterized Constructor
+	public Example(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+	
+	public void display() {
+		System.out.println("x = " + x);
+		System.out.println("y = " + y);
+	}
+	
+	public void sum() {
+		System.out.println("Sum = " + (x + y) + "\n");
+	}
+}
+
+public class ExampleDemo {
+	
+	public static void main(String[] args) {	
+		
+		Example obj1 = new Example();
+		obj1.display();
+		obj1.sum();
+		
+		Example obj2 = new Example(10, 20);
+		obj2.display();
+		obj2.sum();
+		
+		Example obj3 = new Example(30, 40);
+		obj3.display();
+		obj3.sum();
+	}
+}
+
+
+
+***************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
