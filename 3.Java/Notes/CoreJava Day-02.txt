@@ -7,7 +7,7 @@ Structure in C   = Union in C + Independent Memories
 Union in C       = Enum + Combination of Primitive Data Types
 Enum in C        = Arrays + Custom Index Values
 Array            = Data Type with Continuous Memories
-Data Type        = Variable Creation + Hold the Data
+Data Type        = Variable Creation + Hold the type of Data
 Variable         = Copy of the Data Type.
 
 

@@ -8,8 +8,8 @@ public class Demo4 {
 
 	public static void main(String[] args) {
 		
-		Demo2 obj;			//obj - variable
-		obj = new Demo2();	//obj - reference variable
+		Demo4 obj;			//obj - variable
+		obj = new Demo4();	//obj - reference variable
 		
 		obj.sayHi();
 		obj.sayHi();		

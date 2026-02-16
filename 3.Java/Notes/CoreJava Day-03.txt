@@ -1,0 +1,635 @@
+CoreJava Day-03
+***************
+
+Constructors
+************
+1. Constructor is a method.
+2. Constructor is having the same name as the class name.
+3. Constructor does not have any return type.
+
+
+Advantage
+*********
+Constructor invokes/executed automatically, once the object is created.
+
+
+Usage
+*****
+Constructor is used to initialize the default values to the class variables.
+
+
+
+
+1. Implicit Constructor (JVM)
+2. Explicit Constructor
+   1. Default or Un-Parameterized Constructor
+   2. Parameterized Constructor
+
+
+
+
+package day2;
+
+public class Demo1 {
+
+	byte a;
+	short b;
+	int c;
+	long d;
+	float e;
+	double f;
+	boolean g;
+	char h;
+	String i;
+	
+	public Demo1() {
+		a = 10;
+		b = 20;
+	}
+	
+	public static void main(String[] args) {
+
+		Demo1 obj = new Demo1();		
+		System.out.println("a = " + obj.a + "\nb = " + obj.b + "\nc = " + obj.c);
+		System.out.println("d = " + obj.d + "\nb = " + obj.e + "\nc = " + obj.f);
+		System.out.println("g = " + obj.g + "\nh = " + obj.h + "\ni = " + obj.i);
+		System.out.println();
+		
+		Demo1 obj2 = new Demo1();		
+		System.out.println("a = " + obj2.a + "\nb = " + obj2.b + "\nc = " + obj2.c);
+		System.out.println("d = " + obj2.d + "\nb = " + obj2.e + "\nc = " + obj2.f);
+		System.out.println("g = " + obj2.g + "\nh = " + obj2.h + "\ni = " + obj2.i);
+		System.out.println();
+		
+		Demo1 obj3 = new Demo1();		
+		System.out.println("a = " + obj3.a + "\nb = " + obj3.b + "\nc = " + obj3.c);
+		System.out.println("d = " + obj3.d + "\nb = " + obj3.e + "\nc = " + obj3.f);
+		System.out.println("g = " + obj3.g + "\nh = " + obj3.h + "\ni = " + obj3.i);
+		System.out.println();
+	}
+}
+
+
+
+
+
+
+*********************************
+
+Customer Demo
+*************
+
+
+
+Ex-1
+****
+package day2;
+
+class Customer {	
+	private int custId;
+	private String custName;
+	private double balance;
+	
+	//Right Click -> Source -> Generate Constructor using Super Class
+	public Customer() {
+	}
+
+	//Right Click -> Source -> Generate Constructor using Feilds
+	public Customer(int custId, String custName, double balance) {
+		this.custId = custId;
+		this.custName = custName;
+		this.balance = balance;
+	}
+
+	//Right Click -> Source -> Generate Getters & Setters
+	public int getCustId() {
+		return custId;
+	}
+	public void setCustId(int custId) {
+		this.custId = custId;
+	}
+
+	public String getCustName() {
+		return custName;
+	}
+	public void setCustName(String custName) {
+		this.custName = custName;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+	
+	public void showCustomer() {
+		System.out.println("Customer Id: " + custId);
+		System.out.println("Customer Name: " + custName);
+		System.out.println("Account Balance: " + balance + "\n");
+	}	
+}
+
+public class CustomerDemo {
+	public static void main(String[] args) {
+		
+		Customer cust1 = new Customer(1001, "Harsha", 1212.12);
+		cust1.showCustomer();
+		
+	}
+}
+
+
+
+
+Ex-2: Advantage of toString() method
+****
+package day2;
+
+class Customer {	
+	private int custId;
+	private String custName;
+	private double balance;
+	
+	//Right Click -> Source -> Generate Constructor using Super Class
+	public Customer() {
+	}
+
+	//Right Click -> Source -> Generate Constructor using Feilds
+	public Customer(int custId, String custName, double balance) {
+		this.custId = custId;
+		this.custName = custName;
+		this.balance = balance;
+	}
+
+	//Right Click -> Source -> Generate Getters & Setters
+	public int getCustId() {
+		return custId;
+	}
+	public void setCustId(int custId) {
+		this.custId = custId;
+	}
+
+	public String getCustName() {
+		return custName;
+	}
+	public void setCustName(String custName) {
+		this.custName = custName;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [custId=" + custId + 
+				", custName=" + custName + 
+				", balance=" + balance + "]";
+	}
+}
+
+public class CustomerDemo {
+	public static void main(String[] args) {
+		
+		Customer cust1 = new Customer(1001, "Harsha", 1212.12);
+		System.out.println(cust1);
+	}
+}
+
+
+
+
+
+Ex-3: Advantage of Getters & Setters
+*****
+package day2;
+
+class Customer {	
+	
+	private int custId;
+	private String custName;
+	private double balance;
+	
+	public Customer() {
+	}
+
+	public Customer(int custId, String custName, double balance) {
+		this.custId = custId;
+		this.custName = custName;
+		this.balance = balance;
+	}
+
+	public int getCustId() {
+		return custId;
+	}
+	public void setCustId(int custId) {
+		this.custId = custId;
+	}
+
+	public String getCustName() {
+		return custName;
+	}
+	public void setCustName(String custName) {
+		this.custName = custName;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [custId=" + custId + ", custName=" + custName + ", balance=" + balance + "]";
+	}
+}
+
+public class CustomerDemo {
+	public static void main(String[] args) {
+		
+		Customer cust1 = new Customer(1001, "Harsha", 1212.12);
+		System.out.println(cust1);
+		
+		cust1.setCustName("Sree Harsha");
+		System.out.println(cust1);
+		
+		cust1.setBalance(4545.45);
+		System.out.println("New Balance: " + cust1.getBalance());
+	}
+}
+
+
+
+
+Ex-4: Multiple Customer Objects
+****
+package day2;
+
+class Customer {	
+	
+	private int custId;
+	private String custName;
+	private double balance;
+	
+	public Customer() {
+	}
+
+	public Customer(int custId, String custName, double balance) {
+		this.custId = custId;
+		this.custName = custName;
+		this.balance = balance;
+	}
+
+	public int getCustId() {
+		return custId;
+	}
+	public void setCustId(int custId) {
+		this.custId = custId;
+	}
+
+	public String getCustName() {
+		return custName;
+	}
+	public void setCustName(String custName) {
+		this.custName = custName;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [custId=" + custId + ", custName=" + custName + ", balance=" + balance + "]";
+	}
+}
+
+public class CustomerDemo {
+	public static void main(String[] args) {
+		
+		Customer cust1 = new Customer(1001, "Harsha", 1212.12);
+		Customer cust2 = new Customer(1002, "Pasha ", 2323.23);
+		Customer cust3 = new Customer(1003, "Venkat", 3434.34);
+		
+		System.out.println(cust1);
+		System.out.println(cust2);
+		System.out.println(cust3);
+	}
+}
+
+
+
+
+Ex-5: Demo on static for auto generating the customer id values
+****
+package day2;
+
+class Customer {	
+	
+	private static int counter = 1001;
+	
+	private int custId;
+	private String custName;
+	private double balance;
+	
+	public Customer() {
+	}
+
+	public Customer(String custName, double balance) {
+		this.custId = counter++;
+		this.custName = custName;
+		this.balance = balance;
+	}
+
+	public int getCustId() {
+		return custId;
+	}
+	public void setCustId(int custId) {
+		this.custId = custId;
+	}
+
+	public String getCustName() {
+		return custName;
+	}
+	public void setCustName(String custName) {
+		this.custName = custName;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [custId=" + custId + ", custName=" + custName + ", balance=" + balance + "]";
+	}
+}
+
+public class CustomerDemo {
+	public static void main(String[] args) {
+		
+		Customer cust1 = new Customer("Harsha", 1212.12);
+		Customer cust2 = new Customer("Pasha ", 2323.23);
+		Customer cust3 = new Customer("Venkat", 3434.34);
+		
+		System.out.println(cust1);
+		System.out.println(cust2);
+		System.out.println(cust3);
+	}
+}
+
+
+
+Ex-6:
+*****
+package day2;
+
+class Customer {	
+	
+	private static int counter = 1001;
+	
+	private int custId;
+	private String custName;
+	private double balance;
+	
+	public Customer() {
+		this.custId = counter++;
+	}
+
+	public Customer(String custName, double balance) {
+		this.custId = counter++;
+		this.custName = custName;
+		this.balance = balance;
+	}
+
+	public int getCustId() {
+		return custId;
+	}
+	public void setCustId(int custId) {
+		this.custId = custId;
+	}
+
+	public String getCustName() {
+		return custName;
+	}
+	public void setCustName(String custName) {
+		this.custName = custName;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [custId=" + custId + ", custName=" + custName + ", balance=" + balance + "]";
+	}
+}
+
+public class CustomerDemo {
+	public static void main(String[] args) {
+		
+		Customer cust1 = new Customer("Harsha", 1212.12);
+		Customer cust2 = new Customer("Pasha ", 2323.23);
+		Customer cust3 = new Customer("Venkat", 3434.34);
+		
+		System.out.println(cust1);
+		System.out.println(cust2);
+		System.out.println(cust3);
+		
+		Customer cust4 = new Customer();
+		cust4.setCustName("Indira");
+		cust4.setBalance(4545.45);
+		System.out.println(cust4);
+	}
+}
+
+
+
+
+
+Ex-7:  Array of Customer Objects
+*****
+package day2;
+
+class Customer {	
+	
+	private static int counter = 1001;
+	
+	private int custId;
+	private String custName;
+	private double balance;
+	
+	public Customer() {
+		this.custId = counter++;
+	}
+
+	public Customer(String custName, double balance) {
+		
+		this.custId = counter++;
+		this.custName = custName;
+		this.balance = balance;
+	}
+
+	public int getCustId() {
+		return custId;
+	}
+	public void setCustId(int custId) {
+		this.custId = custId;
+	}
+
+	public String getCustName() {
+		return custName;
+	}
+	public void setCustName(String custName) {
+		this.custName = custName;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [custId=" + custId + ", custName=" + custName + ", balance=" + balance + "]";
+	}
+}
+
+public class CustomerDemo {
+	public static void main(String[] args) {
+		
+		Customer[] customers = new Customer[3];
+		
+		Customer cust1 = new Customer("Harsha", 1212.12);
+		Customer cust2 = new Customer("Pasha ", 2323.23);
+		Customer cust3 = new Customer("Venkat", 3434.34);
+		
+		customers[0] = cust1;
+		customers[1] = cust2;
+		customers[2] = cust3;
+		
+		System.out.println(customers[0]);
+		System.out.println(customers[1]);
+		System.out.println(customers[2]);
+	}
+}
+
+
+
+
+
+
+
+
+Ex-8:  Array of Customer Objects
+*****
+package day2;
+
+class Customer {	
+	
+	private static int counter = 1001;
+	
+	private int custId;
+	private String custName;
+	private double balance;
+	
+	public Customer() {
+		this.custId = counter++;
+	}
+
+	public Customer(String custName, double balance) {
+		
+		this.custId = counter++;
+		this.custName = custName;
+		this.balance = balance;
+	}
+
+	public int getCustId() {
+		return custId;
+	}
+	public void setCustId(int custId) {
+		this.custId = custId;
+	}
+
+	public String getCustName() {
+		return custName;
+	}
+	public void setCustName(String custName) {
+		this.custName = custName;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [custId=" + custId + ", custName=" + custName + ", balance=" + balance + "]";
+	}
+}
+
+public class CustomerDemo {
+	public static void main(String[] args) {
+		
+		Customer[] customers = new Customer[3];
+		
+		customers[0] = new Customer("Harsha", 1212.12);
+		customers[1] = new Customer("Pasha ", 2323.23);
+		customers[2] = new Customer("Venkat", 3434.34);
+		
+		for (Customer cust : customers) {
+			System.out.println(cust);
+		}
+	}
+}
+
+
+
+
+
+
+
+
+*********************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

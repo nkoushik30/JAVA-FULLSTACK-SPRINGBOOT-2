@@ -8,7 +8,7 @@ public class Demo3 {
 
 	public static void main(String[] args) {
 		
-		Demo2 obj = new Demo2();
+		Demo3 obj = new Demo3();
 		
 		obj.sayHi();
 		obj.sayHi();		
