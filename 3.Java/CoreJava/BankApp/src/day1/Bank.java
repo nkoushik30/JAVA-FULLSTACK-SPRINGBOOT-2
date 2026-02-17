@@ -122,6 +122,23 @@ public class Bank {
 		}
 		return "Customer Record(s) Not Found!";
 	}
+	public String transferFunds(int custId1, int custId2, double amount){
+		if (index < 0)
+			return "No Customers Found, Array is Empty!!!";
+		
+		for(int i=0;i<=index;i++){
+			if(customers[i].getCustId() == custId1){
+				if(customers[i].getBalance() > amount){
+					deposite(custId2, (customers[i].getBalance()-amount));
+					System.out.println(customers[i].getBalance());
+				}
+				else{
+					return "Funds not available ";
+				}
+			}
+		}
+		return "Funds Transferred successfully: ";
+	}
 
 }
 
