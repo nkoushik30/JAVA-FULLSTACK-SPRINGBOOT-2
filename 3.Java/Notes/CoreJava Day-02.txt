@@ -1,6 +1,15 @@
 CoreJava Day-02
 ***************
 
+
+Contents:
+*********
+1. Features of OOPS
+2. Class & Object
+3. Getters & Setters
+4. Methods
+5. Constructors
+
 class in OOPS    = Structure in CPP + Security
 Structure in CPP = Structure in C + Functions
 Structure in C   = Union in C + Independent Memories

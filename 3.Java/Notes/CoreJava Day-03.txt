@@ -1,6 +1,17 @@
 CoreJava Day-03
 ***************
 
+
+
+Contents:
+*********
+1. Understanding Class using C, C++ & OOPS
+2. Customer Demo Cont...
+3. Constructor
+4. Static
+5. Array of Customer Objects
+
+
 Constructors
 ************
 1. Constructor is a method.

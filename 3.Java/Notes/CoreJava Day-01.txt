@@ -1,6 +1,16 @@
 CoreJava Day-01
 ***************
 
+Contents:
+*********
+1. Basic Hello World Program
+2. DataTypes & Variables
+3. Scanner Class
+4. Operators
+5. Conditional Constructs
+6. Loops
+7. Arrays
+
 
 Create CoreJava Project
 ***********************

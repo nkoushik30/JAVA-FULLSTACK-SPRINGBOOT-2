@@ -1,0 +1,601 @@
+CoreJava Day-04
+***************
+
+1. Create a new java project called "BankApp".
+2. Under src package, create a new package called "day1".
+3. Create the following class files under the src package.
+   1. Customer (without main() method)
+   2. Bank (without main() method)
+   3. RunBankApp (with main() method)
+
+
+
+
+
+
+Skeleton Code for "BankApp"
+***************************
+
+
+
+
+
+Note: Customer Program will Remain same through out our BankApp Project.
+
+Customer
+********
+package day1;
+
+public class Customer {
+
+	private static int counter = 1001;
+	
+	private int custId;
+	private String firstName;
+	private String lastName;
+	private double balance;
+	
+	public Customer() {
+		this.custId = counter++;
+	}
+
+	public Customer(String firstName, String lastName, double balance) {
+		this.custId = counter++;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.balance = balance;
+	}
+
+	public int getCustId() {
+		return custId;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [custId=" + custId + 
+				", Name=" + firstName + " " + lastName + 
+				", balance="+ balance + "]";
+	}
+}
+
+
+
+
+
+
+
+
+
+
+Bank.java
+*********
+package day1;
+
+public class Bank {
+
+	int index = -1;
+	Customer[] customers = new Customer[3];
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+RunBankApp.java
+***************
+package day1;
+
+import java.util.Scanner;
+
+public class RunBankApp {
+	public static void main(String[] args) {
+
+		int choice = 0;
+			
+		Scanner scan = new Scanner(System.in);
+		Bank bank = new Bank();
+		
+		
+		while (true) {
+			System.out.println("Select Your Choice");
+			System.out.println("******************");
+			
+			System.out.println("1. Add Customer");
+			System.out.println("2. Show All Customers");
+			System.out.println("3. Show Customer By Id");
+			System.out.println("4. Deposite");
+			System.out.println("5. Withdraw");
+			System.out.println("6. Get Balance");
+			System.out.println("7. Get Customer By Name");
+			System.out.println("8. Funds Transfer");
+			System.out.println("9. Exit \n");
+			
+			System.out.print("Enter Your Choice: ");
+			choice = scan.nextInt();
+			System.out.println();
+			
+			switch (choice) {
+			
+			case 1:
+			break;
+			
+			case 2:
+			break;
+				
+			case 3:
+			break;
+			
+			case 4:
+			break;
+			
+			case 5:
+			break;
+			
+			case 6:
+			break;
+				
+			case 7:
+			break;
+				
+			case 8:
+			break;
+				
+			case 9:	System.out.println("Application Terminated...");
+			 		System.exit(0);
+			break;
+				
+			default:System.out.println("Invalid Choice!!!");
+			break;
+			}
+			
+			System.out.println("\n");
+		}
+		
+	}
+}
+
+
+
+
+
+
+*********************************************
+
+
+1. Add Customer
+***************
+
+
+
+Bank.java
+*********
+package day1;
+
+public class Bank {
+
+	int index = -1;
+	Customer[] customers = new Customer[3];
+	
+	
+	public String addCustomer(String firstName, 
+			String lastName, double balance) {
+		
+		Customer customer = new Customer(firstName, lastName, balance);
+		
+		if (index < 2) {
+			customers[++index] = customer;
+		} else {
+			return "Cannot Add Customer: Array is Full!!!";
+		}
+		
+		return 	"Account Created Successfully \n" + 
+				"Customer Id: " + customer.getCustId();
+	}
+}
+
+
+
+
+
+
+RunBankApp.java
+***************
+package day1;
+
+import java.util.Scanner;
+
+public class RunBankApp {
+	
+	public static void main(String[] args) {
+
+		int choice = 0;
+		
+		int custId;
+		String firstName;
+		String lastName;
+		double balance;
+		String result;
+			
+		Scanner scan = new Scanner(System.in);
+		Bank bank = new Bank();
+		
+		
+		while (true) {
+			System.out.println("Select Your Choice");
+			System.out.println("******************");
+			
+			System.out.println("1. Add Customer");
+			System.out.println("2. Show All Customers");
+			System.out.println("3. Show Customer By Id");
+			System.out.println("4. Deposite");
+			System.out.println("5. Withdraw");
+			System.out.println("6. Get Balance");
+			System.out.println("7. Get Customer By Name");
+			System.out.println("8. Funds Transfer");
+			System.out.println("9. Exit \n");
+			
+			System.out.print("Enter Your Choice: ");
+			choice = scan.nextInt();
+			System.out.println();
+			
+			switch (choice) {
+			
+			case 1:
+				System.out.print("Enter First Name: ");
+				firstName = scan.next();
+				
+				System.out.print("Enter  Last Name: ");
+				lastName = scan.next();
+				
+				System.out.print("Balance  Amount : ");
+				balance = scan.nextDouble();
+				
+				result = bank.addCustomer(firstName, lastName, balance);    
+				System.out.println(result);
+				
+			break;
+			
+			case 2:
+			break;
+				
+			case 3:
+			break;
+			
+			case 4:
+			break;
+			
+			case 5:
+			break;
+			
+			case 6:
+			break;
+				
+			case 7:
+			break;
+				
+			case 8:
+			break;
+				
+			case 9:	System.out.println("Application Terminated...");
+			 		System.exit(0);
+			break;
+				
+			default:System.out.println("Invalid Choice!!!");
+			break;
+			}
+			
+			System.out.println("\n");
+		}		
+	}
+}
+
+
+
+
+
+
+
+
+
+*********************************************
+
+
+
+2. ShowAllCustomers
+*******************
+
+
+
+Bank.java
+*********
+public String showAllCustomers() {
+
+	if (index < 0)
+		return "No Customers Found, Array is Empty!!!";
+		
+	String result = "";
+		
+	for (int i = 0; i <= index; i++) {
+		result += customers[i] + "\n";
+	}
+		
+	return result;
+}
+
+
+
+
+
+RunBankApp.java
+***************
+case 2:
+	result = bank.showAllCustomers();
+	System.out.println(result);
+break;
+
+
+
+
+
+
+*********************************************
+
+
+
+
+3.ShowCustomerById
+******************
+
+
+Bank.java
+*********
+public String showCustomerById(int custId) {
+
+	if (index < 0)
+		return "No Customers Found, Array is Empty!!!";
+		
+	for (int i = 0; i <= index; i++) {
+			
+		if (customers[i].getCustId() == custId) {
+				
+			return customers[i].toString();
+		}
+	}
+		
+	return "Customer Record Not Found!";
+}
+
+
+
+RunBankApp.java
+***************
+case 3:
+	System.out.print("Enter Customer Id: ");
+	custId = scan.nextInt();
+				
+	result = bank.showCustomerById(custId);
+	System.out.println(result);
+break;
+
+
+*********************************************
+
+
+
+
+
+
+4.Deposite
+**********
+
+
+Bank.java
+*********
+public String deposite(int custId, double amount) {
+
+	if (index < 0)
+		return "No Customers Found, Array is Empty!!!";
+
+	for (int i = 0; i <= index; i++) {
+		if (customers[i].getCustId() == custId) {
+
+			customers[i].setBalance(customers[i].getBalance() + amount);
+				
+			return  "Amount Deposited Successfully \n" + 
+				"Customer Id: " + custId + "\n" + 
+				"New Balance: " + customers[i].getBalance();
+		}
+	}
+
+	return "Customer Record Not Found!";
+}
+
+
+RunBankApp.java
+***************
+case 4:
+	System.out.print("Enter Customer Id: ");
+	custId = scan.nextInt();
+				
+	System.out.print("Enter the Amount : ");
+	double amount = scan.nextDouble();
+				
+	result = bank.deposite(custId, amount);
+	System.out.println(result);
+break;
+
+
+*********************************************
+
+
+
+5.Withdraw
+**********
+
+
+Bank.java
+*********
+public String withdraw(int custId, double amount) {
+
+	if (index < 0)
+		return "No Customers Found, Array is Empty!!!";
+
+	for (int i = 0; i <= index; i++) {
+		if (customers[i].getCustId() == custId) {
+
+			if (customers[i].getBalance() >= amount) {
+					
+				customers[i].setBalance(customers[i].getBalance() - amount);
+					
+				return  "Amount Withdrawn Successfully \n" + 
+					"Customer Id: " + custId + "\n" + 
+					"New Balance: " + customers[i].getBalance();
+			} else {
+				return "Failed to Withdran Amount: Insufficient Funds!";
+			}
+		}
+	}
+	return "Customer Record Not Found!";
+}
+
+
+
+
+RunBankApp.java
+***************
+
+case 5:
+	System.out.print("Enter Customer Id: ");
+	custId = scan.nextInt();
+				
+	System.out.print("Enter the Amount : ");
+	amount = scan.nextDouble();
+				
+	result = bank.withdraw(custId, amount);
+	System.out.println(result);
+break;
+
+
+
+
+*********************************************
+
+
+
+
+
+6.GetBalance
+************
+
+
+Bank.java
+*********
+public String getBalance(int custId) {
+		
+	if (index < 0)
+		return "No Customers Found, Array is Empty!!!";
+
+	for (int i = 0; i <= index; i++) {
+		if (customers[i].getCustId() == custId) {				
+			return "Balance: " + customers[i].getBalance();
+		}
+	}
+
+	return "Customer Record Not Found!";
+}
+
+
+
+RunBankApp.java
+***************
+
+case 6:
+	System.out.print("Enter Customer Id: ");
+	custId = scan.nextInt();
+				
+	result = bank.getBalance(custId);
+	System.out.println(result);
+break;
+
+
+
+*********************************************
+
+
+
+
+
+7.GetCustomerByFirstName
+************************
+
+
+Bank.java
+*********
+public String getCustomerByName(String firstName) {
+
+	if (index < 0)
+		return "No Customers Found, Array is Empty!!!";
+
+	String result = "";
+		
+	for (int i = 0; i <= index; i++) {	
+			
+		if (customers[i].getFirstName().equals(firstName)) {
+				
+			result += customers[i] + "\n";
+		}
+	}
+		
+	if (result.length() != 0) {
+		return result;
+	}
+
+	return "Customer Record(s) Not Found!";
+}
+
+
+RunBankApp.java
+***************
+case 7:
+	System.out.print("Enter FirstName: ");
+	firstName = scan.next();
+				
+	result = bank.getCustomerByName(firstName);
+	System.out.println(result);
+break;
+
+
+*********************************************
+
+
+
+
+
