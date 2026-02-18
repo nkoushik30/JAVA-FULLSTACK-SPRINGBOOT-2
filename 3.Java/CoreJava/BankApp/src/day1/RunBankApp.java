@@ -110,12 +110,13 @@ public class RunBankApp {
 				System.out.println("Enter Payer account id : ");
 				custId1 = scan.nextInt();
 
-				System.out.println("Enter enter amount to be transferred : ");
+				System.out.println("Enter amount to be transferred : ");
 				amount = scan.nextDouble();
 
 				System.out.println("Enter Payee/reciever account id : ");
 				custId2 = scan.nextInt();
-				bank.transferFunds(custId1, custId2, amount);
+				result = bank.transferFunds(custId1, custId2, amount);
+				System.out.println("Funds stage::::::: " + result);
 
 				break;
 
@@ -130,6 +131,7 @@ public class RunBankApp {
 			}
 
 			System.out.println("\n");
+			scan.close();
 		}
 	}
 }

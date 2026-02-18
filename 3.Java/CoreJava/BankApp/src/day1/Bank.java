@@ -3,12 +3,11 @@ package day1;
 public class Bank {
 
 	int index = -1;
-	Customer[] customers = new Customer[3];	
+	Customer[] customers = new Customer[3];
 
-	public String addCustomer(String firstName, 
-			String lastName, double balance) {
+	public String addCustomer(String firstName, String lastName, double balance) {
 
-		Customer customer = new Customer(firstName, lastName, balance);   
+		Customer customer = new Customer(firstName, lastName, balance);
 
 		if (index < 2) {
 			customers[++index] = customer;
@@ -16,8 +15,7 @@ public class Bank {
 			return "Cannot Add Customer: Array is Full!!!";
 		}
 
-		return 	"Account Created Successfully \n" + 
-		"Customer Id: " + customer.getCustId();
+		return "Account Created Successfully \n" + "Customer Id: " + customer.getCustId();
 	}
 
 	public String showAllCustomers() {
@@ -58,12 +56,10 @@ public class Bank {
 		for (int i = 0; i <= index; i++) {
 			if (customers[i].getCustId() == custId) {
 
-				customers[i].setBalance(
-						customers[i].getBalance() + amount);
-				
-				return  "Amount Deposited Successfully \n" + 
-						"Customer Id: " + custId + "\n" + 
-						"New Balance: " + customers[i].getBalance();
+				customers[i].setBalance(customers[i].getBalance() + amount);
+
+				return "Amount Deposited Successfully \n" + "Customer Id: " + custId + "\n" + "New Balance: "
+						+ customers[i].getBalance();
 			}
 		}
 		return "Customer Record Not Found!";
@@ -75,15 +71,13 @@ public class Bank {
 
 		for (int i = 0; i <= index; i++) {
 			if (customers[i].getCustId() == custId) {
-				if (customers[i].getBalance() >= amount) {					
-					customers[i].setBalance(
-							customers[i].getBalance() - amount);
-					
-					return  "Amount Withdrawn Successfully \n" + 
-							"Customer Id: " + custId + "\n" + 
-							"New Balance: " + customers[i].getBalance();
+				if (customers[i].getBalance() >= amount) {
+					customers[i].setBalance(customers[i].getBalance() - amount);
+
+					return "Amount Withdrawn Successfully \n" + "Customer Id: " + custId + "\n" + "New Balance: "
+							+ customers[i].getBalance();
 				} else {
-					return "Failed to Withdran Amount: Insufficient Funds!";      
+					return "Failed to Withdran Amount: Insufficient Funds!";
 				}
 			}
 		}
@@ -91,12 +85,12 @@ public class Bank {
 	}
 
 	public String getBalance(int custId) {
-		
+
 		if (index < 0)
 			return "No Customers Found, Array is Empty!!!";
 
 		for (int i = 0; i <= index; i++) {
-			if (customers[i].getCustId() == custId) {				
+			if (customers[i].getCustId() == custId) {
 				return "Balance: " + customers[i].getBalance();
 			}
 		}
@@ -110,29 +104,31 @@ public class Bank {
 			return "No Customers Found, Array is Empty!!!";
 
 		String result = "";
-		
-		for (int i = 0; i <= index; i++) {				
-			if (customers[i].getFirstName().equals(firstName)) {				
+
+		for (int i = 0; i <= index; i++) {
+			if (customers[i].getFirstName().equals(firstName)) {
 				result += customers[i] + "\n";
 			}
 		}
-		
+
 		if (result.length() != 0) {
 			return result;
 		}
 		return "Customer Record(s) Not Found!";
 	}
-	public String transferFunds(int custId1, int custId2, double amount){
+
+	public String transferFunds(int custId1, int custId2, double amount) {
 		if (index < 0)
 			return "No Customers Found, Array is Empty!!!";
-		
-		for(int i=0;i<=index;i++){
-			if(customers[i].getCustId() == custId1){
-				if(customers[i].getBalance() > amount){
-					deposite(custId2, (customers[i].getBalance()-amount));
-					System.out.println(customers[i].getBalance());
-				}
-				else{
+
+		for (int i = 0; i <= index; i++) {
+			if (customers[i].getCustId() == custId1) {
+				if (customers[i].getBalance() > amount) {
+					customers[i].setBalance(customers[i].getBalance() - amount);
+					deposite(custId2, amount);
+					System.out.println("::::::::::::::::: Available balance  :::::::::::::::::: " + "\n"
+							+ customers[i].getBalance());
+				} else {
 					return "Funds not available ";
 				}
 			}
@@ -141,11 +137,3 @@ public class Bank {
 	}
 
 }
-
-
-
-
-
-
-
-

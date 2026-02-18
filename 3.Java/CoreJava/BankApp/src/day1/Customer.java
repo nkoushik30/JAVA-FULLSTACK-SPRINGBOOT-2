@@ -3,12 +3,12 @@ package day1;
 public class Customer {
 
 	private static int counter = 1001;
-	
+
 	private int custId;
 	private String firstName;
 	private String lastName;
 	private double balance;
-	
+
 	public Customer() {
 		this.custId = counter++;
 	}
@@ -27,6 +27,7 @@ public class Customer {
 	public String getFirstName() {
 		return firstName;
 	}
+
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
@@ -34,6 +35,7 @@ public class Customer {
 	public String getLastName() {
 		return lastName;
 	}
+
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
@@ -41,14 +43,13 @@ public class Customer {
 	public double getBalance() {
 		return balance;
 	}
+
 	public void setBalance(double balance) {
 		this.balance = balance;
 	}
 
 	@Override
 	public String toString() {
-		return "Customer [custId=" + custId + 
-				", Name=" + firstName + " " + lastName + 
-				", balance="+ balance + "]";
+		return "Customer [custId=" + custId + ", Name=" + firstName + " " + lastName + ", balance=" + balance + "]";
 	}
 }
