@@ -20,6 +20,7 @@ class Child3 extends Parent3{
 
 public class Demo3 {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		Child3 obj1 = new Child3();
 		Child3 obj2 = new Child3(20);
