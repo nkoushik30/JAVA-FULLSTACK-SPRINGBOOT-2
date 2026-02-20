@@ -42,7 +42,8 @@ class partTimeEmployee extends Employee {
 	@Override
 	public String toString() {
 		return "partTimeEmployee [hoursWorked=" + hoursWorked + ", empId=" + empId + ", empName=" + empName
-				+ ", address=" + address + ", Salary(_____) for " + hoursWorked + " Hours of work " + calculateSalary() + "]";
+				+ ", address=" + address + ", Salary(_____) for " + hoursWorked + " Hours of work " + calculateSalary()
+				+ "]";
 	}
 
 }
