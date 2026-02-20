@@ -62,17 +62,17 @@ public class Demo3 {
 
 		Swift2 swift = new Swift2();
 		System.out.println("Swift Specifications");
-		colour();
-		infotainment();
-		brakes();
-		steering();
+		swift.colour();
+		swift.infotainment();
+		swift.brakes();
+		swift.steering();
 
 		Magnite1 magnite = new Magnite1();
 		System.out.println("ford Specifications");
-		ford.colour();
-		ford.infotainment();
-		ford.brakes();
-		ford.steering();
+		 magnite.colour();
+		 magnite.infotainment();
+		 magnite.brakes();
+		 magnite.steering();
 	}
 
 }
