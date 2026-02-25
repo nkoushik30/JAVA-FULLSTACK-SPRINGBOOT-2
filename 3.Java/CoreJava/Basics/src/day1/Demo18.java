@@ -17,6 +17,7 @@ public class Demo18 {
 		for (int i = 0; i < arr.length; i++) {
 			System.out.println("arr[" + i + "]: " + arr[i]);   
 		}
+		scan.close();
 	}
 }
 

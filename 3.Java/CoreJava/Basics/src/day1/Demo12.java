@@ -48,5 +48,7 @@ public class Demo12 {
 		default:System.out.println("Invalid Choice");
 		break;
 		}
+		scan.close();
+		
 	}
 }
