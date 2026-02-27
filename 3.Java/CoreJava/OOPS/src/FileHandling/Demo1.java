@@ -7,21 +7,20 @@ public class Demo1 {
 
 	public static void main(String[] args) {
 		// file handling concepts
-		
+
 		FileWriter writer = null;
-		
-		try{
+
+		try {
 			writer = new FileWriter("Myfile.txt", true);
 			writer.write("Line-3 \n");
-		}catch(IOException ie){
+		} catch (IOException ie) {
 			ie.printStackTrace();
-		}
-		finally{
-			try{
-				if(writer!= null){
+		} finally {
+			try {
+				if (writer != null) {
 					writer.close();
-				}	
-			}catch(IOException ie){
+				}
+			} catch (IOException ie) {
 				ie.printStackTrace();
 			}
 		}

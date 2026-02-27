@@ -1,29 +1,28 @@
 package Threding;
- 
 
-class MyThread6 extends Thread{
-private String name;
-	
-	public MyThread6(String name){
+class MyThread6 extends Thread {
+	private String name;
+
+	public MyThread6(String name) {
 		this.name = name;
 	}
+
 	@Override
-	public void run(){
-		for(int i=1;i<4;i++){
+	public void run() {
+		for (int i = 1; i < 4; i++) {
 			System.out.println(name);
-			try{
-				Thread.sleep(1000);	
-			}catch(InterruptedException ie){
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException ie) {
 				ie.printStackTrace();
 			}
 		}
-		if(name.equals("T3")){
+		if (name.equals("T3")) {
 			System.out.println();
-				
+
 		}
 	}
 }
-
 
 public class Demo6 {
 	public static void main(String[] args) {
@@ -35,15 +34,15 @@ public class Demo6 {
 		t1.start();
 		t2.start();
 		t3.start();
-		
-		try{
+
+		try {
 			t1.join();
 			t2.join();
 			t3.join();
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		System.out.println(" Program Teriminated ...");
 	}
 }

@@ -1,16 +1,16 @@
 package Threding;
 
-class MyThread2 extends Thread{
+class MyThread2 extends Thread {
 	@Override
-	public void run(){
-		
+	public void run() {
+
 		System.out.println("Thread Executed ...");
 	}
 }
 
-
 public class Demo2 {
 
+	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		// Multithreads
 		MyThread2 t = new MyThread2();
@@ -20,8 +20,6 @@ public class Demo2 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
 
 	}
 
