@@ -8,16 +8,16 @@ public class Demo1 {
 		System.out.println("Enter a, b :  ");
 		int a = sc.nextInt();
 		int b = sc.nextInt();
-		try{
-			int c = a/b;
-			System.out.println("Quotient : "+c);
-		}catch(Exception e){
+		try {
+			int c = a / b;
+			System.out.println("Quotient : " + c);
+		} catch (Exception e) {
 			System.out.println(e);
 			System.out.println("Enter a, b without zero:  ");
 			a = sc.nextInt();
 			b = sc.nextInt();
-			int c = a/b;
-			System.out.println("Quotient : "+c);
+			int c = a / b;
+			System.out.println("Quotient : " + c);
 		}
 		System.out.println("Hello all");
 		sc.close();

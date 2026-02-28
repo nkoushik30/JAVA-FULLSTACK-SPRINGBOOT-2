@@ -10,12 +10,13 @@ public class Demo12 {
 	public static void main(String[] args) throws IOException {
 		FileOutputStream fos = new FileOutputStream("Myfile4.txt");
 		ObjectOutputStream oos = new ObjectOutputStream(fos);
-		
-		List<Employee> emplist= new ArrayList<Employee>();
+
+		List<Employee> emplist = new ArrayList<Employee>();
 
 		emplist.add(new Employee(101, "koushik", 123.123));
 		emplist.add(new Employee(102, "shaik", 123.123));
 		emplist.add(new Employee(103, "karthik", 123453.34));
-		System.out.println(emplist+ "\n");
+		System.out.println(emplist + "\n");
+		oos.close();
 	}
 }

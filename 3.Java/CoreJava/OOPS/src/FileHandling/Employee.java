@@ -3,15 +3,16 @@ package FileHandling;
 import java.io.Serializable;
 
 @SuppressWarnings("serial")
-public class Employee implements Serializable{
+public class Employee implements Serializable {
 	private int empId;
-	private String  empName;
+	private String empName;
 	private double salary;
+
 	public Employee() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public Employee(int empId, String empName, double salary) {
 		super();
 		this.empId = empId;
@@ -47,8 +48,5 @@ public class Employee implements Serializable{
 	public String toString() {
 		return "Employee [empId=" + empId + ", empName=" + empName + ", salary=" + salary + "]";
 	}
-	
-	
-	
 
 }
