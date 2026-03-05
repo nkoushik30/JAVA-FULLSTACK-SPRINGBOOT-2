@@ -11,7 +11,4 @@ public class Demo5 {
 		// obj.m3(); // protected
 		// obj.m4(); // default
 	}
-
 }
-
-
