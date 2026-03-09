@@ -1,6 +1,5 @@
 package day5;
 
-
 import java.sql.Statement;
 
 import java.sql.Connection;
