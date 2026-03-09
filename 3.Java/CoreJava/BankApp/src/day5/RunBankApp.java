@@ -24,13 +24,11 @@ public class RunBankApp {
 
 			System.out.println("1. Add Commercial Customer");
 			System.out.println("2. Add Personal Customer");
-
-			// create functions for each show method
 			System.out.println("3. Show All Customers");
 			System.out.println("4. Show Customer By Id");
-			System.out.println("5. Deposite");
-			System.out.println("6. Withdraw");
-			System.out.println("7. Get Balance");
+			System.out.println("5. Deposite by customerId");
+			System.out.println("6. Withdraw by customerId");
+			System.out.println("7. Get Balance by customerId");
 			System.out.println("8. Get Customer By Name");
 			System.out.println("9. Funds Transfer");
 			System.out.println("10. Exit \n");
@@ -45,7 +43,7 @@ public class RunBankApp {
 				System.out.print("Enter First Name : ");
 				firstName = scan.next();
 
-				System.out.print("Enter  Last Name : ");
+				System.out.print("\nEnter  Last Name : ");
 				lastName = scan.next();
 
 				System.out.print("Balance  Amount  : ");
