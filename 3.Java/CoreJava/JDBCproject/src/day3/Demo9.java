@@ -19,17 +19,17 @@ public class Demo9 {
 		System.out.println();
 
 		String deleteQry = "delete from customer where custid = ?";
-		
+
 		try {
 			ps = con.prepareStatement(deleteQry);
-			
+
 			ps.setInt(1, custid);
-			
+
 			int result = ps.executeUpdate();
-			
-			if(result > 0){
+
+			if (result > 0) {
 				System.out.println(result + "record Deleted");
-			}else{
+			} else {
 				System.out.println("record(s) deletion failed");
 			}
 

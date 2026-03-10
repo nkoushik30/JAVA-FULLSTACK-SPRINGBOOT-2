@@ -2,7 +2,6 @@ package day3;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -12,11 +11,11 @@ public class Demo6 {
 		
 		Connection con = DbConnection.getConnection();
 		PreparedStatement ps = null;
-		ResultSet rs = null;
 		if (con == null) {
 			System.exit(0);
 		}
 		
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Enter firstname : ");
