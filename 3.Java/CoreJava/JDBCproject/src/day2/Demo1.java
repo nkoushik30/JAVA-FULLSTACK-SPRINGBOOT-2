@@ -16,19 +16,19 @@ public class Demo1 {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		if(conn == null){
+		if (conn == null) {
 			System.out.println("unable to connect:");
 		}
-		
+
 		// getting columns from the table
 		Statement stmt = conn.createStatement();
-		
+
 		ResultSet rs = stmt.executeQuery("select * from customer");
-		
+
 		rs.next();
 
-		System.out.println("Empid : "+ rs.getInt(1));
-		System.out.println("empname : "+rs.getString(2));
+		System.out.println("Empid : " + rs.getInt(1));
+		System.out.println("empname : " + rs.getString(2));
 	}
 
 }

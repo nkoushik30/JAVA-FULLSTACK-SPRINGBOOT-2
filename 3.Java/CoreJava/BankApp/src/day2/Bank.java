@@ -3,43 +3,37 @@ package day2;
 public class Bank {
 
 	int index = -1;
-	Customer[] customers = new Customer[3];	
+	Customer[] customers = new Customer[3];
 
-	public String addCommercialCustomer(String firstName, String lastName, 
-	double balance, String contactPersonName, long contactPersonNumber) {
+	public String addCommercialCustomer(String firstName, String lastName, double balance, String contactPersonName,
+			long contactPersonNumber) {
 
-		CommercialCustomer commercialCustomer = new CommercialCustomer(
-		firstName, lastName, balance, contactPersonName, contactPersonNumber);
+		CommercialCustomer commercialCustomer = new CommercialCustomer(firstName, lastName, balance, contactPersonName,
+				contactPersonNumber);
 
 		if (index < 2) {
 			customers[++index] = commercialCustomer;
 
-			return "Commercial Customer Added Successfully \n" + 
-			"Customer Id: " + commercialCustomer.getCustId();
-		} 
+			return "Commercial Customer Added Successfully \n" + "Customer Id: " + commercialCustomer.getCustId();
+		}
 
-		return "Cannot Add Commercial Customer: Array is Full!!!";		
+		return "Cannot Add Commercial Customer: Array is Full!!!";
 	}
 
-	public String addPersonalCustomer(String firstName, String lastName, 
-			double balance, long homePhone, long workPhone) {
+	public String addPersonalCustomer(String firstName, String lastName, double balance, long homePhone,
+			long workPhone) {
 
-		PersonalCustomer personalCustomer = new PersonalCustomer(
-				firstName, lastName, balance, homePhone, workPhone);
+		PersonalCustomer personalCustomer = new PersonalCustomer(firstName, lastName, balance, homePhone, workPhone);
 
 		if (index < 2) {
 			customers[++index] = personalCustomer;
 
-			return "Personal Customer Added Successfully \n" + 
-			"Customer Id: " + personalCustomer.getCustId();
-		} 
+			return "Personal Customer Added Successfully \n" + "Customer Id: " + personalCustomer.getCustId();
+		}
 
-		return "Cannot Add Personal Customer: Array is Full!!!";		
+		return "Cannot Add Personal Customer: Array is Full!!!";
 	}
 
-	
-	
-	
 	public String showAllCustomers() {
 
 		if (index < 0)
@@ -78,12 +72,10 @@ public class Bank {
 		for (int i = 0; i <= index; i++) {
 			if (customers[i].getCustId() == custId) {
 
-				customers[i].setBalance(
-						customers[i].getBalance() + amount);
+				customers[i].setBalance(customers[i].getBalance() + amount);
 
-				return  "Amount Deposited Successfully \n" + 
-				"Customer Id: " + custId + "\n" + 
-				"New Balance: " + customers[i].getBalance();
+				return "Amount Deposited Successfully \n" + "Customer Id: " + custId + "\n" + "New Balance: "
+						+ customers[i].getBalance();
 			}
 		}
 		return "Customer Record Not Found!";
@@ -95,15 +87,13 @@ public class Bank {
 
 		for (int i = 0; i <= index; i++) {
 			if (customers[i].getCustId() == custId) {
-				if (customers[i].getBalance() >= amount) {					
-					customers[i].setBalance(
-							customers[i].getBalance() - amount);
+				if (customers[i].getBalance() >= amount) {
+					customers[i].setBalance(customers[i].getBalance() - amount);
 
-					return  "Amount Withdrawn Successfully \n" + 
-					"Customer Id: " + custId + "\n" + 
-					"New Balance: " + customers[i].getBalance();
+					return "Amount Withdrawn Successfully \n" + "Customer Id: " + custId + "\n" + "New Balance: "
+							+ customers[i].getBalance();
 				} else {
-					return "Failed to Withdran Amount: Insufficient Funds!";      
+					return "Failed to Withdran Amount: Insufficient Funds!";
 				}
 			}
 		}
@@ -116,7 +106,7 @@ public class Bank {
 			return "No Customers Found, Array is Empty!!!";
 
 		for (int i = 0; i <= index; i++) {
-			if (customers[i].getCustId() == custId) {				
+			if (customers[i].getCustId() == custId) {
 				return "Balance: " + customers[i].getBalance();
 			}
 		}
@@ -131,8 +121,8 @@ public class Bank {
 
 		String result = "";
 
-		for (int i = 0; i <= index; i++) {				
-			if (customers[i].getFirstName().equals(firstName)) {				
+		for (int i = 0; i <= index; i++) {
+			if (customers[i].getFirstName().equals(firstName)) {
 				result += customers[i] + "\n";
 			}
 		}
@@ -143,7 +133,6 @@ public class Bank {
 		return "Customer Record(s) Not Found!";
 	}
 
-
 	public Customer getCustomer(int custId) {
 
 		for (int i = 0; i <= index; i++) {
@@ -152,13 +141,11 @@ public class Bank {
 
 				return customers[i];
 			}
-		}		
+		}
 		return null;
 	}
 
-
-	public String fundsTransfer(int custId, 
-			int beneficiaryId, double amount) {
+	public String fundsTransfer(int custId, int beneficiaryId, double amount) {
 
 		if (index < 0)
 			return "No Customers Found, Array is Empty!!!";
@@ -172,25 +159,15 @@ public class Bank {
 		if (beneficiary == null)
 			return "Beneficiary Customer Not Found, Check BeneficiaryId";
 
-
 		if (customer.getBalance() >= amount) {
 
 			customer.setBalance(customer.getBalance() - amount);
 			beneficiary.setBalance(beneficiary.getBalance() + amount);
 
-			return  "FundsTransfered Successful \n" + 
-			"New Balance: " + customer.getBalance();
+			return "FundsTransfered Successful \n" + "New Balance: " + customer.getBalance();
 		}
 
 		return "FundsTransfer Failed: Insufficient Balance...";
 	}
 
 }
-
-
-
-
-
-
-
-

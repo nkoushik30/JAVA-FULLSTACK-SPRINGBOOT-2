@@ -9,7 +9,7 @@ public class Demo13 {
 			i++;
 		}
 		System.out.println("\n");
-		
+
 		System.out.println("Do-While Loop");
 		i = 1;
 		do {
@@ -17,7 +17,7 @@ public class Demo13 {
 			i++;
 		} while (i > 22);
 		System.out.println("\n");
-		
+
 		System.out.println("For Loop");
 		for (i = 1; i < 6; i++) {
 			System.out.print(i + " ");

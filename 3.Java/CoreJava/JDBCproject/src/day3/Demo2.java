@@ -10,8 +10,8 @@ public class Demo2 {
 	public static void main(String[] args) {
 		Connection con = DbConnection.getConnection();
 		PreparedStatement ps = null;
-		
-		if(con == null ){
+
+		if (con == null) {
 			System.out.println("Error connecting DB:");
 		}
 		System.out.println("Enter the custid to delete his/her record : ");
@@ -20,15 +20,15 @@ public class Demo2 {
 		try {
 			ps = con.prepareStatement(deleteQry);
 			ps.setInt(1, custid);
-			
+
 			int result = ps.executeUpdate();
-			
-			if(result == 0){
+
+			if (result == 0) {
 				System.out.println("Error deleting the record");
-			}else{
-				System.out.println(custid+" Record deleted successfully...");
+			} else {
+				System.out.println(custid + " Record deleted successfully...");
 			}
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

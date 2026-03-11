@@ -4,16 +4,16 @@ public class CommercialCustomer extends Customer {
 
 	private String contactPersonName;
 	private long contactPersonNumber;
-	
+
 	public CommercialCustomer() {
 		super();
 	}
 
-	public CommercialCustomer(String firstName, String lastName, 
-	double balance, String contactPersonName, long contactPersonNumber) {
-		
+	public CommercialCustomer(String firstName, String lastName, double balance, String contactPersonName,
+			long contactPersonNumber) {
+
 		super(firstName, lastName, balance);
-		
+
 		this.contactPersonName = contactPersonName;
 		this.contactPersonNumber = contactPersonNumber;
 	}
@@ -21,6 +21,7 @@ public class CommercialCustomer extends Customer {
 	public String getContactPersonName() {
 		return contactPersonName;
 	}
+
 	public void setContactPersonName(String contactPersonName) {
 		this.contactPersonName = contactPersonName;
 	}
@@ -28,9 +29,10 @@ public class CommercialCustomer extends Customer {
 	public long getContactPersonNumber() {
 		return contactPersonNumber;
 	}
+
 	public void setContactPersonNumber(long contactPersonNumber) {
 		this.contactPersonNumber = contactPersonNumber;
-	}	
+	}
 
 	@Override
 	public double calculateIntrest() {
@@ -39,20 +41,8 @@ public class CommercialCustomer extends Customer {
 
 	@Override
 	public String toString() {
-		return "CommercialCustomer [" + 
-				"CustId="              + custId    + ", " +
-				"Name="                + firstName + " "  + lastName + ", " +     
-				"Balance="             + balance   + ", " +
-				"ContactPersonName="   + contactPersonName +  ", " +
-				"ContactPersonNumber=" + contactPersonNumber + ", " + 
-				"IntrestAmount=" + calculateIntrest() + "]";
+		return "CommercialCustomer [" + "CustId=" + custId + ", " + "Name=" + firstName + " " + lastName + ", "
+				+ "Balance=" + balance + ", " + "ContactPersonName=" + contactPersonName + ", " + "ContactPersonNumber="
+				+ contactPersonNumber + ", " + "IntrestAmount=" + calculateIntrest() + "]";
 	}
 }
-
-
-
-
-
-
-
-

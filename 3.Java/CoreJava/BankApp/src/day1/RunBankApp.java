@@ -131,6 +131,7 @@ public class RunBankApp {
 			}
 
 			System.out.println("\n");
+			scan.close();
 		}
 	}
 }

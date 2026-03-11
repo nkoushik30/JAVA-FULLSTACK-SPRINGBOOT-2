@@ -6,7 +6,7 @@ public class Demo3 {
 
 		int x = 10;
 		int y = 3;
-		
+
 		System.out.println("Sum = " + (x + y));
 		System.out.println("Sub = " + (x - y));
 		System.out.println("Mul = " + (x * y));
